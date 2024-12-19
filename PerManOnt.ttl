@@ -1,0 +1,1514 @@
+@prefix : <http://www.semanticweb.org/ontologies/2022/1/apso/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix apso: <http://www.semanticweb.org/ontologies/2022/1/apso/> .
+@prefix perm: <http://www.semanticweb.org/ontologies/2022/1/apso/perm#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix device: <http://www.semanticweb.org/ontologies/2022/1/apso/device#> .
+@base <http://www.semanticweb.org/ontologies/2022/1/apso/core#> .
+
+<http://www.semanticweb.org/ontologies/2024/PerManOnt> rdf:type owl:Ontology ;
+                                                        owl:versionIRI <http://www.semanticweb.org/ontologies/2024/PerManOnt> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/canNotOccurWith
+apso:canNotOccurWith rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdf:type owl:SymmetricProperty ;
+                     rdfs:domain apso:ContextIndicator ;
+                     rdfs:range apso:ContextIndicator .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/conflicts
+apso:conflicts rdf:type owl:ObjectProperty ,
+                        owl:SymmetricProperty ;
+               rdfs:domain :Preference ;
+               rdfs:range :Preference .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/dependsOn
+apso:dependsOn rdf:type owl:ObjectProperty ;
+               rdfs:domain :Permission ;
+               rdfs:range :Permission .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/hasContextIndicator
+apso:hasContextIndicator rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdfs:domain :DescriptiveContext ;
+                         rdfs:range apso:ContextIndicator .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/isCorrelatedWith
+apso:isCorrelatedWith rdf:type owl:ObjectProperty ,
+                               owl:SymmetricProperty ;
+                      rdfs:domain :Preference ;
+                      rdfs:range :Preference .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Application ;
+           rdfs:range :ApplicationAuthor .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :partOf ;
+         rdf:type owl:TransitiveProperty ;
+         rdfs:domain owl:Thing ;
+         rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#hasPartDirectly
+:hasPartDirectly rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasPart ;
+                 rdfs:domain owl:Thing ;
+                 rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#hasPreference
+:hasPreference rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Policy ;
+               rdfs:range :Preference ;
+               owl:propertyChainAxiom ( :hasPart
+                                        :hasPreference
+                                      ) .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#hasProtectionLevel
+:hasProtectionLevel rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain :Permission ;
+                    rdfs:range :ProtectionLevel .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#onDescriptiveContext
+:onDescriptiveContext rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:range :DescriptiveContext .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#onPreferenceAction
+:onPreferenceAction rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:range :PreferenceAction .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#onPreferenceObject
+:onPreferenceObject rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:range :PreferenceObject .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#onTargetContext
+:onTargetContext rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:range :TargetContext .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:TransitiveProperty ;
+        rdfs:domain owl:Thing ;
+        rdfs:range owl:Thing .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/isActive
+apso:isActive rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain apso:ContextIndicator ;
+              rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/level
+apso:level rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :DescriptiveContext ;
+           rdfs:range xsd:nonNegativeInteger .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/ContextIndicator
+apso:ContextIndicator rdf:type owl:Class ;
+                      rdfs:subClassOf :DescriptiveContext ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasPartDirectly ;
+                                        owl:hasSelf "true"^^xsd:boolean
+                                      ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/CurrentContext
+apso:CurrentContext rdf:type owl:Class ;
+                    rdfs:subClassOf apso:ContextIndicator ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty apso:isActive ;
+                                      owl:hasValue "true"^^xsd:boolean
+                                    ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Application
+:Application rdf:type owl:Class ;
+             rdfs:subClassOf :TargetContext ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :partOf ;
+                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                    owl:oneOf ( :Universal_Target
+                                                              )
+                                                  ]
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasPartDirectly ;
+                               owl:hasSelf "true"^^xsd:boolean
+                             ] ;
+             owl:disjointWith :ApplicationCategory .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#ApplicationAuthor
+:ApplicationAuthor rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#ApplicationCategory
+:ApplicationCategory rdf:type owl:Class ;
+                     rdfs:subClassOf :TargetContext .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#ApplicationTargetPreference
+:ApplicationTargetPreference rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :onTargetContext ;
+                                                   owl:someValuesFrom :Application
+                                                 ] ;
+                             rdfs:subClassOf :Preference .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#BackgroundPermission
+:BackgroundPermission rdf:type owl:Class ;
+                      rdfs:subClassOf :Permission .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#ConditionalContext
+:ConditionalContext rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:unionOf ( :DescriptiveContext
+                                                        :PreferenceObject
+                                                        :TargetContext
+                                                      )
+                                        ] ;
+                    rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#CustomCategory
+:CustomCategory rdf:type owl:Class ;
+                rdfs:subClassOf :ApplicationCategory .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#DangerousPermission
+:DangerousPermission rdf:type owl:Class ;
+                     rdfs:subClassOf :Permission ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasProtectionLevel ;
+                                       owl:someValuesFrom [ rdf:type owl:Class ;
+                                                            owl:oneOf ( :Prot_Dangerous
+                                                                      )
+                                                          ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :partOf ;
+                                       owl:someValuesFrom [ rdf:type owl:Class ;
+                                                            owl:oneOf ( :Dangerous_Permissions
+                                                                      )
+                                                          ]
+                                     ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#DescriptiveContext
+:DescriptiveContext rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :partOf ;
+                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                           owl:oneOf ( :Universal_Description
+                                                                     )
+                                                         ]
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasPart ;
+                                      owl:allValuesFrom [ rdf:type owl:Class ;
+                                                          owl:unionOf ( apso:ContextIndicator
+                                                                        :DescriptiveContext
+                                                                      )
+                                                        ]
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasPartDirectly ;
+                                      owl:hasSelf "true"^^xsd:boolean
+                                    ] ;
+                    owl:disjointWith :PreferenceObject .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#GroupTargetPreference
+:GroupTargetPreference rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty :onTargetContext ;
+                                             owl:someValuesFrom :ApplicationCategory
+                                           ] ;
+                       rdfs:subClassOf :Preference .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf :DescriptiveContext ;
+          owl:disjointWith :SocialEnvironment .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#NormalPermission
+:NormalPermission rdf:type owl:Class ;
+                  rdfs:subClassOf :Permission ,
+                                  [ rdf:type owl:Class ;
+                                    owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasProtectionLevel ;
+                                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                         owl:oneOf ( :Prot_Normal
+                                                                                   )
+                                                                       ]
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasProtectionLevel ;
+                                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                         owl:oneOf ( :Prot_Signature
+                                                                                   )
+                                                                       ]
+                                                  ]
+                                                )
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :partOf ;
+                                    owl:someValuesFrom [ rdf:type owl:Class ;
+                                                         owl:oneOf ( :Normal_Permissions
+                                                                   )
+                                                       ]
+                                  ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Permission
+:Permission rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:unionOf ( :DangerousPermission
+                                                :NormalPermission
+                                              )
+                                ] ;
+            rdfs:subClassOf :PreferenceObject ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :partOf ;
+                              owl:someValuesFrom [ rdf:type owl:Class ;
+                                                   owl:oneOf ( :Universal_Object
+                                                             )
+                                                 ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasProtectionLevel ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass [ rdf:type owl:Class ;
+                                            owl:oneOf ( :Prot_Dangerous
+                                                        :Prot_Normal
+                                                        :Prot_Signature
+                                                      )
+                                          ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasPartDirectly ;
+                              owl:hasSelf "true"^^xsd:boolean
+                            ] ;
+            owl:disjointWith :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#PermissionGroup
+:PermissionGroup rdf:type owl:Class ;
+                 rdfs:subClassOf :PreferenceObject .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#PermissionGroupPreference
+:PermissionGroupPreference rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :onPreferenceObject ;
+                                                 owl:someValuesFrom :PermissionGroup
+                                               ] ;
+                           rdfs:subClassOf :Preference .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#PlayCategory
+:PlayCategory rdf:type owl:Class ;
+              rdfs:subClassOf :ApplicationCategory .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Policy
+:Policy rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPart ;
+                          owl:someValuesFrom [ rdf:type owl:Class ;
+                                               owl:oneOf ( :Pol_Android
+                                                         )
+                                             ]
+                        ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Preference
+:Preference rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :onDescriptiveContext ;
+                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :DescriptiveContext
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :onPreferenceAction ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :PreferenceAction
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :onPreferenceObject ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :PreferenceObject
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :onTargetContext ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :TargetContext
+                            ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#PreferenceAction
+:PreferenceAction rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:oneOf ( :Act_Not_Share
+                                                    :Act_Prompt_Group
+                                                    :Act_Prompt_Permission
+                                                    :Act_Share
+                                                  )
+                                      ] ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#PreferenceObject
+:PreferenceObject rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasPart ;
+                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( :Permission
+                                                                      :PermissionGroup
+                                                                    )
+                                                      ]
+                                  ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#ProtectionLevel
+:ProtectionLevel rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#ProtectionLevelPreference
+:ProtectionLevelPreference rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :onPreferenceObject ;
+                                                 owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                      owl:oneOf ( :Dangerous_Permissions
+                                                                                  :Normal_Permissions
+                                                                                )
+                                                                    ]
+                                               ] ;
+                           rdfs:subClassOf :Preference .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#SocialEnvironment
+:SocialEnvironment rdf:type owl:Class ;
+                   rdfs:subClassOf :DescriptiveContext .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#TargetContext
+:TargetContext rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasPart ;
+                                 owl:allValuesFrom [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :Application
+                                                                   :ApplicationCategory
+                                                                 )
+                                                   ]
+                               ] ;
+               owl:disjointWith [ rdf:type owl:Class ;
+                                  owl:unionOf ( :DescriptiveContext
+                                                :PreferenceObject
+                                              )
+                                ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Time
+:Time rdf:type owl:Class ;
+      rdfs:subClassOf :DescriptiveContext ;
+      owl:disjointWith [ rdf:type owl:Class ;
+                         owl:unionOf ( :Location
+                                       :SocialEnvironment
+                                     )
+                       ] .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#UniversalObjectPreference
+:UniversalObjectPreference rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :onPreferenceObject ;
+                                                 owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                      owl:oneOf ( :Universal_Object
+                                                                                )
+                                                                    ]
+                                               ] ;
+                           rdfs:subClassOf :Preference .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#UniversalTargetPreference
+:UniversalTargetPreference rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :onTargetContext ;
+                                                 owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                      owl:oneOf ( :Universal_Target
+                                                                                )
+                                                                    ]
+                                               ] ;
+                           rdfs:subClassOf :Preference .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/Mary_2
+apso:Mary_2 rdf:type owl:NamedIndividual ,
+                     :Preference ;
+            :onDescriptiveContext device:DC_At_Work ;
+            :onPreferenceAction :Act_Not_Share ;
+            :onPreferenceObject :Universal_Object ;
+            :onTargetContext device:CC_Work_Apps .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/Traveling
+apso:Traveling rdf:type owl:NamedIndividual ,
+                        apso:ContextIndicator ;
+               apso:isActive "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Act_Not_Share
+:Act_Not_Share rdf:type owl:NamedIndividual ;
+               owl:differentFrom :Act_Prompt_Group ,
+                                 :Act_Prompt_Permission ,
+                                 :Act_Share .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Act_Prompt_Group
+:Act_Prompt_Group rdf:type owl:NamedIndividual ;
+                  owl:differentFrom :Act_Prompt_Permission ,
+                                    :Act_Share .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Act_Prompt_Permission
+:Act_Prompt_Permission rdf:type owl:NamedIndividual ;
+                       owl:differentFrom :Act_Share .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Act_Share
+:Act_Share rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Android_1
+:Android_1 rdf:type owl:NamedIndividual ,
+                    :Preference ;
+           :onDescriptiveContext :Universal_Description ;
+           :onPreferenceAction :Act_Prompt_Group ;
+           :onPreferenceObject :Dangerous_Permissions ;
+           :onTargetContext :Universal_Target .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Android_2
+:Android_2 rdf:type owl:NamedIndividual ,
+                    :Preference ;
+           :onDescriptiveContext :Universal_Description ;
+           :onPreferenceAction :Act_Share ;
+           :onPreferenceObject :Normal_Permissions ;
+           :onTargetContext :Universal_Target .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Background_Permissions
+:Background_Permissions rdf:type owl:NamedIndividual ,
+                                 :PreferenceObject ;
+                        :hasPart perm:Access_Background_Location .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Dangerous_Permissions
+:Dangerous_Permissions rdf:type owl:NamedIndividual ,
+                                :PreferenceObject .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Normal_Permissions
+:Normal_Permissions rdf:type owl:NamedIndividual ,
+                             :PreferenceObject .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Pol_Android
+:Pol_Android rdf:type owl:NamedIndividual ,
+                      :Policy ;
+             :hasPreference :Android_1 ,
+                            :Android_2 .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Prot_Dangerous
+:Prot_Dangerous rdf:type owl:NamedIndividual ,
+                         :ProtectionLevel ;
+                owl:differentFrom :Prot_Normal ,
+                                  :Prot_Signature .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Prot_Normal
+:Prot_Normal rdf:type owl:NamedIndividual ,
+                      :ProtectionLevel ;
+             owl:differentFrom :Prot_Signature .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Prot_Signature
+:Prot_Signature rdf:type owl:NamedIndividual ,
+                         :ProtectionLevel .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Universal_Description
+:Universal_Description rdf:type owl:NamedIndividual ,
+                                :DescriptiveContext .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Universal_Object
+:Universal_Object rdf:type owl:NamedIndividual ,
+                           :PreferenceObject .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/core#Universal_Target
+:Universal_Target rdf:type owl:NamedIndividual ,
+                           :TargetContext .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#App_Authenticator
+device:App_Authenticator rdf:type owl:NamedIndividual ,
+                                  :Application ;
+                         :hasAuthor device:Author_Microsoft_Cooperation ;
+                         :partOf device:CC_Work_Apps ,
+                                 device:PC_Business .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#App_Hjelp113
+device:App_Hjelp113 rdf:type owl:NamedIndividual ,
+                             :Application ;
+                    :hasAuthor device:Author_Stiftelsen_Norsk_Luftambulanse ;
+                    :partOf device:PC_Medical .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#App_NRKTV
+device:App_NRKTV rdf:type owl:NamedIndividual ,
+                          :Application ;
+                 :hasAuthor device:Author_NRK ;
+                 :partOf device:PC_Entertainment .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#App_Zoom
+device:App_Zoom rdf:type owl:NamedIndividual ,
+                         :Application ;
+                :hasAuthor device:Author_Zoom_us ;
+                :partOf device:CC_Work_Apps ,
+                        device:PC_Business .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Author_Microsoft_Cooperation
+device:Author_Microsoft_Cooperation rdf:type owl:NamedIndividual ,
+                                             :ApplicationAuthor .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Author_NRK
+device:Author_NRK rdf:type owl:NamedIndividual ,
+                           :ApplicationAuthor .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Author_Stiftelsen_Norsk_Luftambulanse
+device:Author_Stiftelsen_Norsk_Luftambulanse rdf:type owl:NamedIndividual ,
+                                                      :ApplicationAuthor .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Author_Zoom_us
+device:Author_Zoom_us rdf:type owl:NamedIndividual ,
+                               :ApplicationAuthor .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#CC_Mary_Approved_Apps
+device:CC_Mary_Approved_Apps rdf:type owl:NamedIndividual ,
+                                      :CustomCategory ;
+                             :hasPart device:App_NRKTV .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#CC_Microsoft_Apps
+device:CC_Microsoft_Apps rdf:type owl:NamedIndividual ,
+                                  :CustomCategory ;
+                         :hasPart device:App_Authenticator .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#CC_Work_Apps
+device:CC_Work_Apps rdf:type owl:NamedIndividual ,
+                             :CustomCategory .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Child_1
+device:Child_1 rdf:type owl:NamedIndividual ,
+                        :Preference ;
+               :onDescriptiveContext :Universal_Description ;
+               :onPreferenceAction :Act_Share ;
+               :onPreferenceObject :Universal_Object ;
+               :onTargetContext device:CC_Mary_Approved_Apps .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#DC_At_Work
+device:DC_At_Work rdf:type owl:NamedIndividual ,
+                           :DescriptiveContext .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Henry_1
+device:Henry_1 rdf:type owl:NamedIndividual ,
+                        :Preference ;
+               :onDescriptiveContext :Universal_Description ;
+               :onPreferenceAction :Act_Share ;
+               :onPreferenceObject :Universal_Object ;
+               :onTargetContext device:CC_Microsoft_Apps .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Henry_2
+device:Henry_2 rdf:type owl:NamedIndividual ,
+                        :Preference ;
+               :onDescriptiveContext :Universal_Description ;
+               :onPreferenceAction :Act_Not_Share ;
+               :onPreferenceObject perm:Access_Background_Location ;
+               :onTargetContext :Universal_Target .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Henry_3
+device:Henry_3 rdf:type owl:NamedIndividual ,
+                        :Preference ;
+               :onDescriptiveContext :Universal_Description ;
+               :onPreferenceAction :Act_Share ;
+               :onPreferenceObject perm:Access_Background_Location ;
+               :onTargetContext device:App_Hjelp113 .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Mary_1
+device:Mary_1 rdf:type owl:NamedIndividual ,
+                       :Preference ;
+              :onDescriptiveContext device:DC_At_Work ;
+              :onPreferenceAction :Act_Share ;
+              :onPreferenceObject :Universal_Object ;
+              :onTargetContext device:CC_Work_Apps .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#PC_Business
+device:PC_Business rdf:type owl:NamedIndividual ,
+                            :PlayCategory .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#PC_Entertainment
+device:PC_Entertainment rdf:type owl:NamedIndividual ,
+                                 :PlayCategory .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#PC_Medical
+device:PC_Medical rdf:type owl:NamedIndividual ,
+                           :PlayCategory .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Pol_Cece
+device:Pol_Cece rdf:type owl:NamedIndividual ,
+                         :Policy ;
+                :hasPart device:Pol_Child .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Pol_Child
+device:Pol_Child rdf:type owl:NamedIndividual ,
+                          :Policy ;
+                 :hasPreference device:Child_1 .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Pol_Henry
+device:Pol_Henry rdf:type owl:NamedIndividual ,
+                          :Policy ;
+                 :hasPreference device:Henry_1 ,
+                                device:Henry_2 ,
+                                device:Henry_3 .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/device#Pol_Mary
+device:Pol_Mary rdf:type owl:NamedIndividual ,
+                         :Policy ;
+                :hasPreference device:Mary_1 .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Accept_Handover
+perm:Accept_Handover rdf:type owl:NamedIndividual ,
+                              :Permission ;
+                     :hasProtectionLevel :Prot_Dangerous ;
+                     :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Access_Background_Location
+perm:Access_Background_Location rdf:type owl:NamedIndividual ,
+                                         :Permission ;
+                                :hasProtectionLevel :Prot_Dangerous ;
+                                :partOf perm:Group_Location .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Access_Coarse_Location
+perm:Access_Coarse_Location rdf:type owl:NamedIndividual ,
+                                     :Permission ;
+                            :hasProtectionLevel :Prot_Dangerous ;
+                            :partOf perm:Group_Location .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Access_Fine_Location
+perm:Access_Fine_Location rdf:type owl:NamedIndividual ,
+                                   :Permission ;
+                          :hasProtectionLevel :Prot_Dangerous ;
+                          :partOf perm:Group_Location .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Access_Media_Location
+perm:Access_Media_Location rdf:type owl:NamedIndividual ,
+                                    :Permission ;
+                           :hasProtectionLevel :Prot_Dangerous ;
+                           :partOf perm:Group_Storage .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Activity_Recognition
+perm:Activity_Recognition rdf:type owl:NamedIndividual ,
+                                   :Permission ;
+                          :hasProtectionLevel :Prot_Dangerous ;
+                          :partOf perm:Group_Activity_Recognition .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Add_Voicemail
+perm:Add_Voicemail rdf:type owl:NamedIndividual ,
+                            :Permission ;
+                   :hasProtectionLevel :Prot_Dangerous ;
+                   :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Answer_Phone_Calls
+perm:Answer_Phone_Calls rdf:type owl:NamedIndividual ,
+                                 :Permission ;
+                        :hasProtectionLevel :Prot_Dangerous ;
+                        :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Body_Sensors
+perm:Body_Sensors rdf:type owl:NamedIndividual ,
+                           :Permission ;
+                  :hasProtectionLevel :Prot_Dangerous ;
+                  :partOf perm:Group_Sensors .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Call_Companion_App
+perm:Call_Companion_App rdf:type owl:NamedIndividual ,
+                                 :Permission ;
+                        :hasProtectionLevel :Prot_Normal ;
+                        :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Call_Phone
+perm:Call_Phone rdf:type owl:NamedIndividual ,
+                         :Permission ;
+                :hasProtectionLevel :Prot_Dangerous ;
+                :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Camera
+perm:Camera rdf:type owl:NamedIndividual ,
+                     :Permission ;
+            :hasProtectionLevel :Prot_Dangerous ;
+            :partOf perm:Group_Camera .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Activity_Recognition
+perm:Group_Activity_Recognition rdf:type owl:NamedIndividual ,
+                                         :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Calendar
+perm:Group_Calendar rdf:type owl:NamedIndividual ,
+                             :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Call_Log
+perm:Group_Call_Log rdf:type owl:NamedIndividual ,
+                             :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Camera
+perm:Group_Camera rdf:type owl:NamedIndividual ,
+                           :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Contacts
+perm:Group_Contacts rdf:type owl:NamedIndividual ,
+                             :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Location
+perm:Group_Location rdf:type owl:NamedIndividual ,
+                             :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Microphone
+perm:Group_Microphone rdf:type owl:NamedIndividual ,
+                               :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Phone
+perm:Group_Phone rdf:type owl:NamedIndividual ,
+                          :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Sensors
+perm:Group_Sensors rdf:type owl:NamedIndividual ,
+                            :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Sms
+perm:Group_Sms rdf:type owl:NamedIndividual ,
+                        :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Group_Storage
+perm:Group_Storage rdf:type owl:NamedIndividual ,
+                            :PermissionGroup .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#High_Sampling_Rate_Sensors
+perm:High_Sampling_Rate_Sensors rdf:type owl:NamedIndividual ,
+                                         :Permission ;
+                                :hasProtectionLevel :Prot_Normal ;
+                                :partOf perm:Group_Sensors .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Manage_External_Storage
+perm:Manage_External_Storage rdf:type owl:NamedIndividual ,
+                                      :Permission ;
+                             :hasProtectionLevel :Prot_Signature ;
+                             :partOf perm:Group_Storage .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Manage_Media
+perm:Manage_Media rdf:type owl:NamedIndividual ,
+                           :Permission ;
+                  :hasProtectionLevel :Prot_Signature ;
+                  :partOf perm:Group_Storage .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Manage_Own_Calls
+perm:Manage_Own_Calls rdf:type owl:NamedIndividual ,
+                               :Permission ;
+                      :hasProtectionLevel :Prot_Normal ;
+                      :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Process_Outgoing_Calls
+perm:Process_Outgoing_Calls rdf:type owl:NamedIndividual ,
+                                     :Permission ;
+                            :hasProtectionLevel :Prot_Dangerous ;
+                            :partOf perm:Group_Call_Log .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Read_Basic_Phone_State
+perm:Read_Basic_Phone_State rdf:type owl:NamedIndividual ,
+                                     :Permission ;
+                            :hasProtectionLevel :Prot_Normal ;
+                            :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Read_Calendar
+perm:Read_Calendar rdf:type owl:NamedIndividual ,
+                            :Permission ;
+                   :hasProtectionLevel :Prot_Dangerous ;
+                   :partOf perm:Group_Calendar .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Read_Call_Log
+perm:Read_Call_Log rdf:type owl:NamedIndividual ,
+                            :Permission ;
+                   :hasProtectionLevel :Prot_Dangerous ;
+                   :partOf perm:Group_Call_Log .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Read_Contacts
+perm:Read_Contacts rdf:type owl:NamedIndividual ,
+                            :Permission ;
+                   :hasProtectionLevel :Prot_Dangerous ;
+                   :partOf perm:Group_Contacts .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Read_External_Storage
+perm:Read_External_Storage rdf:type owl:NamedIndividual ,
+                                    :Permission ;
+                           :hasProtectionLevel :Prot_Dangerous ;
+                           :partOf perm:Group_Storage .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Read_Phone_Numbers
+perm:Read_Phone_Numbers rdf:type owl:NamedIndividual ,
+                                 :Permission ;
+                        :hasProtectionLevel :Prot_Dangerous ;
+                        :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Read_Phone_State
+perm:Read_Phone_State rdf:type owl:NamedIndividual ,
+                               :Permission ;
+                      :hasProtectionLevel :Prot_Dangerous ;
+                      :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Read_Sms
+perm:Read_Sms rdf:type owl:NamedIndividual ,
+                       :Permission ;
+              :hasProtectionLevel :Prot_Dangerous ;
+              :partOf perm:Group_Sms .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Receive_Mms
+perm:Receive_Mms rdf:type owl:NamedIndividual ,
+                          :Permission ;
+                 :hasProtectionLevel :Prot_Dangerous ;
+                 :partOf perm:Group_Sms .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Receive_Sms
+perm:Receive_Sms rdf:type owl:NamedIndividual ,
+                          :Permission ;
+                 :hasProtectionLevel :Prot_Dangerous ;
+                 :partOf perm:Group_Sms .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Receive_Wap_Push
+perm:Receive_Wap_Push rdf:type owl:NamedIndividual ,
+                               :Permission ;
+                      :hasProtectionLevel :Prot_Dangerous ;
+                      :partOf perm:Group_Sms .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Record_Audio
+perm:Record_Audio rdf:type owl:NamedIndividual ,
+                           :Permission ;
+                  :hasProtectionLevel :Prot_Dangerous ;
+                  :partOf perm:Group_Microphone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Send_Sms
+perm:Send_Sms rdf:type owl:NamedIndividual ,
+                       :Permission ;
+              :hasProtectionLevel :Prot_Dangerous ;
+              :partOf perm:Group_Sms .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Use_Biometric
+perm:Use_Biometric rdf:type owl:NamedIndividual ,
+                            :Permission ;
+                   :hasProtectionLevel :Prot_Normal ;
+                   :partOf perm:Group_Sensors .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Use_Fingerprint
+perm:Use_Fingerprint rdf:type owl:NamedIndividual ,
+                              :Permission ;
+                     :hasProtectionLevel :Prot_Normal ;
+                     :partOf perm:Group_Sensors .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Use_Sip
+perm:Use_Sip rdf:type owl:NamedIndividual ,
+                      :Permission ;
+             :hasProtectionLevel :Prot_Dangerous ;
+             :partOf perm:Group_Phone .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Write_Calendar
+perm:Write_Calendar rdf:type owl:NamedIndividual ,
+                             :Permission ;
+                    :hasProtectionLevel :Prot_Dangerous ;
+                    :partOf perm:Group_Calendar .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Write_Call_Log
+perm:Write_Call_Log rdf:type owl:NamedIndividual ,
+                             :Permission ;
+                    :hasProtectionLevel :Prot_Dangerous ;
+                    :partOf perm:Group_Call_Log .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Write_Contacts
+perm:Write_Contacts rdf:type owl:NamedIndividual ,
+                             :Permission ;
+                    :hasProtectionLevel :Prot_Dangerous ;
+                    :partOf perm:Group_Contacts .
+
+
+###  http://www.semanticweb.org/ontologies/2022/1/apso/perm#Write_External_Storage
+perm:Write_External_Storage rdf:type owl:NamedIndividual ,
+                                     :Permission ;
+                            :hasProtectionLevel :Prot_Dangerous ;
+                            :partOf perm:Group_Storage .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#x1> rdf:type swrl:Variable .
+
+<urn:swrl:var#x2> rdf:type swrl:Variable .
+
+<urn:swrl:var#y1> rdf:type swrl:Variable .
+
+<urn:swrl:var#y2> rdf:type swrl:Variable .
+
+<urn:swrl:var#y3> rdf:type swrl:Variable .
+
+<urn:swrl:var#y22> rdf:type swrl:Variable .
+
+<urn:swrl:var#y33> rdf:type swrl:Variable .
+
+<urn:swrl:var#z1> rdf:type swrl:Variable .
+
+<urn:swrl:var#z2> rdf:type swrl:Variable .
+
+<urn:swrl:var#y4> rdf:type swrl:Variable .
+
+<urn:swrl:var#y5> rdf:type swrl:Variable .
+
+<urn:swrl:var#z3> rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S2" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :Preference ;
+                           swrl:argument1 <urn:swrl:var#x1>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate :Preference ;
+                                      swrl:argument1 <urn:swrl:var#x2>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :onDescriptiveContext ;
+                                                 swrl:argument1 <urn:swrl:var#x1> ;
+                                                 swrl:argument2 <urn:swrl:var#y1>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :onDescriptiveContext ;
+                                                            swrl:argument1 <urn:swrl:var#x2> ;
+                                                            swrl:argument2 <urn:swrl:var#y1>
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate :onTargetContext ;
+                                                                       swrl:argument1 <urn:swrl:var#x1> ;
+                                                                       swrl:argument2 <urn:swrl:var#y2>
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                  swrl:propertyPredicate :onPreferenceObject ;
+                                                                                  swrl:argument1 <urn:swrl:var#x1> ;
+                                                                                  swrl:argument2 <urn:swrl:var#y3>
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                             swrl:propertyPredicate :onTargetContext ;
+                                                                                             swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                             swrl:argument2 <urn:swrl:var#y22>
+                                                                                           ] ;
+                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                            rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                        swrl:propertyPredicate :onPreferenceObject ;
+                                                                                                        swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                                        swrl:argument2 <urn:swrl:var#y33>
+                                                                                                      ] ;
+                                                                                            rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                       rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                                   swrl:classPredicate :Application ;
+                                                                                                                   swrl:argument1 <urn:swrl:var#z1>
+                                                                                                                 ] ;
+                                                                                                       rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                  rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                              swrl:propertyPredicate :hasPart ;
+                                                                                                                              swrl:argument1 <urn:swrl:var#y2> ;
+                                                                                                                              swrl:argument2 <urn:swrl:var#z1>
+                                                                                                                            ] ;
+                                                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                             rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                         swrl:propertyPredicate :hasPart ;
+                                                                                                                                         swrl:argument1 <urn:swrl:var#y22> ;
+                                                                                                                                         swrl:argument2 <urn:swrl:var#z1>
+                                                                                                                                       ] ;
+                                                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                        rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                                                                    swrl:classPredicate :Permission ;
+                                                                                                                                                    swrl:argument1 <urn:swrl:var#z2>
+                                                                                                                                                  ] ;
+                                                                                                                                        rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                   rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                               swrl:propertyPredicate :hasPart ;
+                                                                                                                                                               swrl:argument1 <urn:swrl:var#y3> ;
+                                                                                                                                                               swrl:argument2 <urn:swrl:var#z2>
+                                                                                                                                                             ] ;
+                                                                                                                                                   rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                              rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                          swrl:propertyPredicate :hasPart ;
+                                                                                                                                                                          swrl:argument1 <urn:swrl:var#y33> ;
+                                                                                                                                                                          swrl:argument2 <urn:swrl:var#z2>
+                                                                                                                                                                        ] ;
+                                                                                                                                                              rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                         rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                                     swrl:propertyPredicate :onPreferenceAction ;
+                                                                                                                                                                                     swrl:argument1 <urn:swrl:var#x1> ;
+                                                                                                                                                                                     swrl:argument2 <urn:swrl:var#y4>
+                                                                                                                                                                                   ] ;
+                                                                                                                                                                         rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                                    rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                                                swrl:propertyPredicate :onPreferenceAction ;
+                                                                                                                                                                                                swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                                                                                                                                swrl:argument2 <urn:swrl:var#y5>
+                                                                                                                                                                                              ] ;
+                                                                                                                                                                                    rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                                               rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                                                                                                                                                                                                           swrl:argument1 <urn:swrl:var#y4> ;
+                                                                                                                                                                                                           swrl:argument2 <urn:swrl:var#y5>
+                                                                                                                                                                                                         ] ;
+                                                                                                                                                                                               rdf:rest rdf:nil
+                                                                                                                                                                                             ]
+                                                                                                                                                                                  ]
+                                                                                                                                                                       ]
+                                                                                                                                                            ]
+                                                                                                                                                 ]
+                                                                                                                                      ]
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate apso:conflicts ;
+                           swrl:argument1 <urn:swrl:var#x1> ;
+                           swrl:argument2 <urn:swrl:var#x2>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S3" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :Preference ;
+                           swrl:argument1 <urn:swrl:var#x1>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate :Preference ;
+                                      swrl:argument1 <urn:swrl:var#x2>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :onDescriptiveContext ;
+                                                 swrl:argument1 <urn:swrl:var#x1> ;
+                                                 swrl:argument2 <urn:swrl:var#y1>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :onDescriptiveContext ;
+                                                            swrl:argument1 <urn:swrl:var#x2> ;
+                                                            swrl:argument2 <urn:swrl:var#y1>
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate :onTargetContext ;
+                                                                       swrl:argument1 <urn:swrl:var#x1> ;
+                                                                       swrl:argument2 <urn:swrl:var#y2>
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                  swrl:propertyPredicate :onPreferenceObject ;
+                                                                                  swrl:argument1 <urn:swrl:var#x1> ;
+                                                                                  swrl:argument2 <urn:swrl:var#y3>
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                             swrl:propertyPredicate :onTargetContext ;
+                                                                                             swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                             swrl:argument2 <urn:swrl:var#y22>
+                                                                                           ] ;
+                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                            rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                        swrl:propertyPredicate :onPreferenceObject ;
+                                                                                                        swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                                        swrl:argument2 <urn:swrl:var#y33>
+                                                                                                      ] ;
+                                                                                            rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                       rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                                   swrl:classPredicate :Application ;
+                                                                                                                   swrl:argument1 <urn:swrl:var#z1>
+                                                                                                                 ] ;
+                                                                                                       rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                  rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                              swrl:propertyPredicate :hasPart ;
+                                                                                                                              swrl:argument1 <urn:swrl:var#y2> ;
+                                                                                                                              swrl:argument2 <urn:swrl:var#z1>
+                                                                                                                            ] ;
+                                                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                             rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                         swrl:propertyPredicate :hasPart ;
+                                                                                                                                         swrl:argument1 <urn:swrl:var#y22> ;
+                                                                                                                                         swrl:argument2 <urn:swrl:var#z1>
+                                                                                                                                       ] ;
+                                                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                        rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                    swrl:propertyPredicate :hasPart ;
+                                                                                                                                                    swrl:argument1 <urn:swrl:var#y3> ;
+                                                                                                                                                    swrl:argument2 <urn:swrl:var#z2>
+                                                                                                                                                  ] ;
+                                                                                                                                        rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                   rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                               swrl:propertyPredicate :hasPart ;
+                                                                                                                                                               swrl:argument1 <urn:swrl:var#y33> ;
+                                                                                                                                                               swrl:argument2 <urn:swrl:var#z3>
+                                                                                                                                                             ] ;
+                                                                                                                                                   rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                              rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                          swrl:propertyPredicate apso:dependsOn ;
+                                                                                                                                                                          swrl:argument1 <urn:swrl:var#z2> ;
+                                                                                                                                                                          swrl:argument2 <urn:swrl:var#z3>
+                                                                                                                                                                        ] ;
+                                                                                                                                                              rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                         rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                                     swrl:propertyPredicate :onPreferenceAction ;
+                                                                                                                                                                                     swrl:argument1 <urn:swrl:var#x1> ;
+                                                                                                                                                                                     swrl:argument2 <urn:swrl:var#y4>
+                                                                                                                                                                                   ] ;
+                                                                                                                                                                         rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                                    rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                                                swrl:propertyPredicate :onPreferenceAction ;
+                                                                                                                                                                                                swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                                                                                                                                swrl:argument2 <urn:swrl:var#y5>
+                                                                                                                                                                                              ] ;
+                                                                                                                                                                                    rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                                               rdf:first [ rdf:type swrl:SameIndividualAtom ;
+                                                                                                                                                                                                           swrl:argument1 <urn:swrl:var#y4> ;
+                                                                                                                                                                                                           swrl:argument2 :Act_Share
+                                                                                                                                                                                                         ] ;
+                                                                                                                                                                                               rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                                                          rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                                                                                                                                                                                                                      swrl:argument1 <urn:swrl:var#y4> ;
+                                                                                                                                                                                                                      swrl:argument2 <urn:swrl:var#y5>
+                                                                                                                                                                                                                    ] ;
+                                                                                                                                                                                                          rdf:rest rdf:nil
+                                                                                                                                                                                                        ]
+                                                                                                                                                                                             ]
+                                                                                                                                                                                  ]
+                                                                                                                                                                       ]
+                                                                                                                                                            ]
+                                                                                                                                                 ]
+                                                                                                                                      ]
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate apso:conflicts ;
+                           swrl:argument1 <urn:swrl:var#x1> ;
+                           swrl:argument2 <urn:swrl:var#x2>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :Preference ;
+                           swrl:argument1 <urn:swrl:var#x1>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate :Preference ;
+                                      swrl:argument1 <urn:swrl:var#x2>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                                                 swrl:argument1 <urn:swrl:var#x1> ;
+                                                 swrl:argument2 <urn:swrl:var#x2>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :onDescriptiveContext ;
+                                                            swrl:argument1 <urn:swrl:var#x1> ;
+                                                            swrl:argument2 <urn:swrl:var#y1>
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate :onDescriptiveContext ;
+                                                                       swrl:argument1 <urn:swrl:var#x2> ;
+                                                                       swrl:argument2 <urn:swrl:var#y1>
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                  swrl:propertyPredicate :onTargetContext ;
+                                                                                  swrl:argument1 <urn:swrl:var#x1> ;
+                                                                                  swrl:argument2 <urn:swrl:var#y2>
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                             swrl:propertyPredicate :onPreferenceObject ;
+                                                                                             swrl:argument1 <urn:swrl:var#x1> ;
+                                                                                             swrl:argument2 <urn:swrl:var#y3>
+                                                                                           ] ;
+                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                            rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                        swrl:propertyPredicate :onTargetContext ;
+                                                                                                        swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                                        swrl:argument2 <urn:swrl:var#y22>
+                                                                                                      ] ;
+                                                                                            rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                       rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                   swrl:propertyPredicate :onPreferenceObject ;
+                                                                                                                   swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                                                   swrl:argument2 <urn:swrl:var#y33>
+                                                                                                                 ] ;
+                                                                                                       rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                  rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                                              swrl:classPredicate :Application ;
+                                                                                                                              swrl:argument1 <urn:swrl:var#z1>
+                                                                                                                            ] ;
+                                                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                             rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                         swrl:propertyPredicate :hasPart ;
+                                                                                                                                         swrl:argument1 <urn:swrl:var#y2> ;
+                                                                                                                                         swrl:argument2 <urn:swrl:var#z1>
+                                                                                                                                       ] ;
+                                                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                        rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                    swrl:propertyPredicate :hasPart ;
+                                                                                                                                                    swrl:argument1 <urn:swrl:var#y22> ;
+                                                                                                                                                    swrl:argument2 <urn:swrl:var#z1>
+                                                                                                                                                  ] ;
+                                                                                                                                        rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                   rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                                                                               swrl:classPredicate :Permission ;
+                                                                                                                                                               swrl:argument1 <urn:swrl:var#z2>
+                                                                                                                                                             ] ;
+                                                                                                                                                   rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                              rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                          swrl:propertyPredicate :hasPart ;
+                                                                                                                                                                          swrl:argument1 <urn:swrl:var#y3> ;
+                                                                                                                                                                          swrl:argument2 <urn:swrl:var#z2>
+                                                                                                                                                                        ] ;
+                                                                                                                                                              rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                         rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                                     swrl:propertyPredicate :hasPart ;
+                                                                                                                                                                                     swrl:argument1 <urn:swrl:var#y33> ;
+                                                                                                                                                                                     swrl:argument2 <urn:swrl:var#z2>
+                                                                                                                                                                                   ] ;
+                                                                                                                                                                         rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                                    rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                                                swrl:propertyPredicate :onPreferenceAction ;
+                                                                                                                                                                                                swrl:argument1 <urn:swrl:var#x1> ;
+                                                                                                                                                                                                swrl:argument2 <urn:swrl:var#y4>
+                                                                                                                                                                                              ] ;
+                                                                                                                                                                                    rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                                               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                                                                           swrl:propertyPredicate :onPreferenceAction ;
+                                                                                                                                                                                                           swrl:argument1 <urn:swrl:var#x2> ;
+                                                                                                                                                                                                           swrl:argument2 <urn:swrl:var#y4>
+                                                                                                                                                                                                         ] ;
+                                                                                                                                                                                               rdf:rest rdf:nil
+                                                                                                                                                                                             ]
+                                                                                                                                                                                  ]
+                                                                                                                                                                       ]
+                                                                                                                                                            ]
+                                                                                                                                                 ]
+                                                                                                                                      ]
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate apso:isCorrelatedWith ;
+                           swrl:argument1 <urn:swrl:var#x1> ;
+                           swrl:argument2 <urn:swrl:var#x2>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

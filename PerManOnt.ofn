@@ -1,0 +1,925 @@
+Prefix(:=<http://www.semanticweb.org/ontologies/2022/1/apso/core#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(apso:=<http://www.semanticweb.org/ontologies/2022/1/apso/>)
+Prefix(perm:=<http://www.semanticweb.org/ontologies/2022/1/apso/perm#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(swrl:=<http://www.w3.org/2003/11/swrl#>)
+Prefix(swrla:=<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#>)
+Prefix(swrlb:=<http://www.w3.org/2003/11/swrlb#>)
+Prefix(device:=<http://www.semanticweb.org/ontologies/2022/1/apso/device#>)
+
+
+Ontology(<http://www.semanticweb.org/ontologies/2024/PerManOnt>
+<http://www.semanticweb.org/ontologies/2024/PerManOnt>
+
+Declaration(Class(apso:ContextIndicator))
+Declaration(Class(apso:CurrentContext))
+Declaration(Class(:Application))
+Declaration(Class(:ApplicationAuthor))
+Declaration(Class(:ApplicationCategory))
+Declaration(Class(:ApplicationTargetPreference))
+Declaration(Class(:BackgroundPermission))
+Declaration(Class(:ConditionalContext))
+Declaration(Class(:CustomCategory))
+Declaration(Class(:DangerousPermission))
+Declaration(Class(:DescriptiveContext))
+Declaration(Class(:GroupTargetPreference))
+Declaration(Class(:Location))
+Declaration(Class(:NormalPermission))
+Declaration(Class(:Permission))
+Declaration(Class(:PermissionGroup))
+Declaration(Class(:PermissionGroupPreference))
+Declaration(Class(:PlayCategory))
+Declaration(Class(:Policy))
+Declaration(Class(:Preference))
+Declaration(Class(:PreferenceAction))
+Declaration(Class(:PreferenceObject))
+Declaration(Class(:ProtectionLevel))
+Declaration(Class(:ProtectionLevelPreference))
+Declaration(Class(:SocialEnvironment))
+Declaration(Class(:TargetContext))
+Declaration(Class(:Time))
+Declaration(Class(:UniversalObjectPreference))
+Declaration(Class(:UniversalTargetPreference))
+Declaration(ObjectProperty(apso:canNotOccurWith))
+Declaration(ObjectProperty(apso:conflicts))
+Declaration(ObjectProperty(apso:dependsOn))
+Declaration(ObjectProperty(apso:hasContextIndicator))
+Declaration(ObjectProperty(apso:isCorrelatedWith))
+Declaration(ObjectProperty(:hasAuthor))
+Declaration(ObjectProperty(:hasPart))
+Declaration(ObjectProperty(:hasPartDirectly))
+Declaration(ObjectProperty(:hasPreference))
+Declaration(ObjectProperty(:hasProtectionLevel))
+Declaration(ObjectProperty(:onDescriptiveContext))
+Declaration(ObjectProperty(:onPreferenceAction))
+Declaration(ObjectProperty(:onPreferenceObject))
+Declaration(ObjectProperty(:onTargetContext))
+Declaration(ObjectProperty(:partOf))
+Declaration(DataProperty(apso:isActive))
+Declaration(DataProperty(apso:level))
+Declaration(NamedIndividual(apso:Mary_2))
+Declaration(NamedIndividual(apso:Traveling))
+Declaration(NamedIndividual(:Act_Not_Share))
+Declaration(NamedIndividual(:Act_Prompt_Group))
+Declaration(NamedIndividual(:Act_Prompt_Permission))
+Declaration(NamedIndividual(:Act_Share))
+Declaration(NamedIndividual(:Android_1))
+Declaration(NamedIndividual(:Android_2))
+Declaration(NamedIndividual(:Background_Permissions))
+Declaration(NamedIndividual(:Dangerous_Permissions))
+Declaration(NamedIndividual(:Normal_Permissions))
+Declaration(NamedIndividual(:Pol_Android))
+Declaration(NamedIndividual(:Prot_Dangerous))
+Declaration(NamedIndividual(:Prot_Normal))
+Declaration(NamedIndividual(:Prot_Signature))
+Declaration(NamedIndividual(:Universal_Description))
+Declaration(NamedIndividual(:Universal_Object))
+Declaration(NamedIndividual(:Universal_Target))
+Declaration(NamedIndividual(device:App_Authenticator))
+Declaration(NamedIndividual(device:App_Hjelp113))
+Declaration(NamedIndividual(device:App_NRKTV))
+Declaration(NamedIndividual(device:App_Zoom))
+Declaration(NamedIndividual(device:Author_Microsoft_Cooperation))
+Declaration(NamedIndividual(device:Author_NRK))
+Declaration(NamedIndividual(device:Author_Stiftelsen_Norsk_Luftambulanse))
+Declaration(NamedIndividual(device:Author_Zoom_us))
+Declaration(NamedIndividual(device:CC_Mary_Approved_Apps))
+Declaration(NamedIndividual(device:CC_Microsoft_Apps))
+Declaration(NamedIndividual(device:CC_Work_Apps))
+Declaration(NamedIndividual(device:Child_1))
+Declaration(NamedIndividual(device:DC_At_Work))
+Declaration(NamedIndividual(device:Henry_1))
+Declaration(NamedIndividual(device:Henry_2))
+Declaration(NamedIndividual(device:Henry_3))
+Declaration(NamedIndividual(device:Mary_1))
+Declaration(NamedIndividual(device:PC_Business))
+Declaration(NamedIndividual(device:PC_Entertainment))
+Declaration(NamedIndividual(device:PC_Medical))
+Declaration(NamedIndividual(device:Pol_Cece))
+Declaration(NamedIndividual(device:Pol_Child))
+Declaration(NamedIndividual(device:Pol_Henry))
+Declaration(NamedIndividual(device:Pol_Mary))
+Declaration(NamedIndividual(perm:Accept_Handover))
+Declaration(NamedIndividual(perm:Access_Background_Location))
+Declaration(NamedIndividual(perm:Access_Coarse_Location))
+Declaration(NamedIndividual(perm:Access_Fine_Location))
+Declaration(NamedIndividual(perm:Access_Media_Location))
+Declaration(NamedIndividual(perm:Activity_Recognition))
+Declaration(NamedIndividual(perm:Add_Voicemail))
+Declaration(NamedIndividual(perm:Answer_Phone_Calls))
+Declaration(NamedIndividual(perm:Body_Sensors))
+Declaration(NamedIndividual(perm:Call_Companion_App))
+Declaration(NamedIndividual(perm:Call_Phone))
+Declaration(NamedIndividual(perm:Camera))
+Declaration(NamedIndividual(perm:Group_Activity_Recognition))
+Declaration(NamedIndividual(perm:Group_Calendar))
+Declaration(NamedIndividual(perm:Group_Call_Log))
+Declaration(NamedIndividual(perm:Group_Camera))
+Declaration(NamedIndividual(perm:Group_Contacts))
+Declaration(NamedIndividual(perm:Group_Location))
+Declaration(NamedIndividual(perm:Group_Microphone))
+Declaration(NamedIndividual(perm:Group_Phone))
+Declaration(NamedIndividual(perm:Group_Sensors))
+Declaration(NamedIndividual(perm:Group_Sms))
+Declaration(NamedIndividual(perm:Group_Storage))
+Declaration(NamedIndividual(perm:High_Sampling_Rate_Sensors))
+Declaration(NamedIndividual(perm:Manage_External_Storage))
+Declaration(NamedIndividual(perm:Manage_Media))
+Declaration(NamedIndividual(perm:Manage_Own_Calls))
+Declaration(NamedIndividual(perm:Process_Outgoing_Calls))
+Declaration(NamedIndividual(perm:Read_Basic_Phone_State))
+Declaration(NamedIndividual(perm:Read_Calendar))
+Declaration(NamedIndividual(perm:Read_Call_Log))
+Declaration(NamedIndividual(perm:Read_Contacts))
+Declaration(NamedIndividual(perm:Read_External_Storage))
+Declaration(NamedIndividual(perm:Read_Phone_Numbers))
+Declaration(NamedIndividual(perm:Read_Phone_State))
+Declaration(NamedIndividual(perm:Read_Sms))
+Declaration(NamedIndividual(perm:Receive_Mms))
+Declaration(NamedIndividual(perm:Receive_Sms))
+Declaration(NamedIndividual(perm:Receive_Wap_Push))
+Declaration(NamedIndividual(perm:Record_Audio))
+Declaration(NamedIndividual(perm:Send_Sms))
+Declaration(NamedIndividual(perm:Use_Biometric))
+Declaration(NamedIndividual(perm:Use_Fingerprint))
+Declaration(NamedIndividual(perm:Use_Sip))
+Declaration(NamedIndividual(perm:Write_Calendar))
+Declaration(NamedIndividual(perm:Write_Call_Log))
+Declaration(NamedIndividual(perm:Write_Contacts))
+Declaration(NamedIndividual(perm:Write_External_Storage))
+Declaration(AnnotationProperty(swrla:isRuleEnabled))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: apso:canNotOccurWith (apso:canNotOccurWith)
+
+SubObjectPropertyOf(apso:canNotOccurWith owl:topObjectProperty)
+SymmetricObjectProperty(apso:canNotOccurWith)
+ObjectPropertyDomain(apso:canNotOccurWith apso:ContextIndicator)
+ObjectPropertyRange(apso:canNotOccurWith apso:ContextIndicator)
+
+# Object Property: apso:conflicts (apso:conflicts)
+
+SymmetricObjectProperty(apso:conflicts)
+ObjectPropertyDomain(apso:conflicts :Preference)
+ObjectPropertyRange(apso:conflicts :Preference)
+
+# Object Property: apso:dependsOn (apso:dependsOn)
+
+ObjectPropertyDomain(apso:dependsOn :Permission)
+ObjectPropertyRange(apso:dependsOn :Permission)
+
+# Object Property: apso:hasContextIndicator (apso:hasContextIndicator)
+
+SubObjectPropertyOf(apso:hasContextIndicator owl:topObjectProperty)
+ObjectPropertyDomain(apso:hasContextIndicator :DescriptiveContext)
+ObjectPropertyRange(apso:hasContextIndicator apso:ContextIndicator)
+
+# Object Property: apso:isCorrelatedWith (apso:isCorrelatedWith)
+
+SymmetricObjectProperty(apso:isCorrelatedWith)
+ObjectPropertyDomain(apso:isCorrelatedWith :Preference)
+ObjectPropertyRange(apso:isCorrelatedWith :Preference)
+
+# Object Property: :hasAuthor (:hasAuthor)
+
+SubObjectPropertyOf(:hasAuthor owl:topObjectProperty)
+ObjectPropertyDomain(:hasAuthor :Application)
+ObjectPropertyRange(:hasAuthor :ApplicationAuthor)
+
+# Object Property: :hasPart (:hasPart)
+
+SubObjectPropertyOf(:hasPart owl:topObjectProperty)
+InverseObjectProperties(:hasPart :partOf)
+TransitiveObjectProperty(:hasPart)
+ObjectPropertyDomain(:hasPart owl:Thing)
+ObjectPropertyRange(:hasPart owl:Thing)
+
+# Object Property: :hasPartDirectly (:hasPartDirectly)
+
+SubObjectPropertyOf(:hasPartDirectly :hasPart)
+ObjectPropertyDomain(:hasPartDirectly owl:Thing)
+ObjectPropertyRange(:hasPartDirectly owl:Thing)
+
+# Object Property: :hasPreference (:hasPreference)
+
+SubObjectPropertyOf(:hasPreference owl:topObjectProperty)
+ObjectPropertyDomain(:hasPreference :Policy)
+ObjectPropertyRange(:hasPreference :Preference)
+
+# Object Property: :hasProtectionLevel (:hasProtectionLevel)
+
+SubObjectPropertyOf(:hasProtectionLevel owl:topObjectProperty)
+ObjectPropertyDomain(:hasProtectionLevel :Permission)
+ObjectPropertyRange(:hasProtectionLevel :ProtectionLevel)
+
+# Object Property: :onDescriptiveContext (:onDescriptiveContext)
+
+SubObjectPropertyOf(:onDescriptiveContext owl:topObjectProperty)
+ObjectPropertyRange(:onDescriptiveContext :DescriptiveContext)
+
+# Object Property: :onPreferenceAction (:onPreferenceAction)
+
+SubObjectPropertyOf(:onPreferenceAction owl:topObjectProperty)
+ObjectPropertyRange(:onPreferenceAction :PreferenceAction)
+
+# Object Property: :onPreferenceObject (:onPreferenceObject)
+
+SubObjectPropertyOf(:onPreferenceObject owl:topObjectProperty)
+ObjectPropertyRange(:onPreferenceObject :PreferenceObject)
+
+# Object Property: :onTargetContext (:onTargetContext)
+
+SubObjectPropertyOf(:onTargetContext owl:topObjectProperty)
+ObjectPropertyRange(:onTargetContext :TargetContext)
+
+# Object Property: :partOf (:partOf)
+
+SubObjectPropertyOf(:partOf owl:topObjectProperty)
+TransitiveObjectProperty(:partOf)
+ObjectPropertyDomain(:partOf owl:Thing)
+ObjectPropertyRange(:partOf owl:Thing)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: apso:isActive (apso:isActive)
+
+SubDataPropertyOf(apso:isActive owl:topDataProperty)
+FunctionalDataProperty(apso:isActive)
+DataPropertyDomain(apso:isActive apso:ContextIndicator)
+DataPropertyRange(apso:isActive xsd:boolean)
+
+# Data Property: apso:level (apso:level)
+
+SubDataPropertyOf(apso:level owl:topDataProperty)
+DataPropertyDomain(apso:level :DescriptiveContext)
+DataPropertyRange(apso:level xsd:nonNegativeInteger)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: apso:ContextIndicator (apso:ContextIndicator)
+
+SubClassOf(apso:ContextIndicator :DescriptiveContext)
+SubClassOf(apso:ContextIndicator ObjectHasSelf(:hasPartDirectly))
+
+# Class: apso:CurrentContext (apso:CurrentContext)
+
+SubClassOf(apso:CurrentContext apso:ContextIndicator)
+SubClassOf(apso:CurrentContext DataHasValue(apso:isActive "true"^^xsd:boolean))
+
+# Class: :Application (:Application)
+
+SubClassOf(:Application :TargetContext)
+SubClassOf(:Application ObjectSomeValuesFrom(:partOf ObjectOneOf(:Universal_Target)))
+SubClassOf(:Application ObjectHasSelf(:hasPartDirectly))
+DisjointClasses(:Application :ApplicationCategory)
+
+# Class: :ApplicationAuthor (:ApplicationAuthor)
+
+SubClassOf(:ApplicationAuthor owl:Thing)
+
+# Class: :ApplicationCategory (:ApplicationCategory)
+
+SubClassOf(:ApplicationCategory :TargetContext)
+
+# Class: :ApplicationTargetPreference (:ApplicationTargetPreference)
+
+EquivalentClasses(:ApplicationTargetPreference ObjectSomeValuesFrom(:onTargetContext :Application))
+SubClassOf(:ApplicationTargetPreference :Preference)
+
+# Class: :BackgroundPermission (:BackgroundPermission)
+
+SubClassOf(:BackgroundPermission :Permission)
+
+# Class: :ConditionalContext (:ConditionalContext)
+
+EquivalentClasses(:ConditionalContext ObjectUnionOf(:DescriptiveContext :PreferenceObject :TargetContext))
+SubClassOf(:ConditionalContext owl:Thing)
+
+# Class: :CustomCategory (:CustomCategory)
+
+SubClassOf(:CustomCategory :ApplicationCategory)
+
+# Class: :DangerousPermission (:DangerousPermission)
+
+SubClassOf(:DangerousPermission :Permission)
+SubClassOf(:DangerousPermission ObjectSomeValuesFrom(:hasProtectionLevel ObjectOneOf(:Prot_Dangerous)))
+SubClassOf(:DangerousPermission ObjectSomeValuesFrom(:partOf ObjectOneOf(:Dangerous_Permissions)))
+
+# Class: :DescriptiveContext (:DescriptiveContext)
+
+SubClassOf(:DescriptiveContext ObjectSomeValuesFrom(:partOf ObjectOneOf(:Universal_Description)))
+SubClassOf(:DescriptiveContext ObjectAllValuesFrom(:hasPart ObjectUnionOf(apso:ContextIndicator :DescriptiveContext)))
+SubClassOf(:DescriptiveContext ObjectHasSelf(:hasPartDirectly))
+DisjointClasses(:DescriptiveContext :PreferenceObject)
+
+# Class: :GroupTargetPreference (:GroupTargetPreference)
+
+EquivalentClasses(:GroupTargetPreference ObjectSomeValuesFrom(:onTargetContext :ApplicationCategory))
+SubClassOf(:GroupTargetPreference :Preference)
+
+# Class: :Location (:Location)
+
+SubClassOf(:Location :DescriptiveContext)
+DisjointClasses(:Location :SocialEnvironment)
+
+# Class: :NormalPermission (:NormalPermission)
+
+SubClassOf(:NormalPermission :Permission)
+SubClassOf(:NormalPermission ObjectUnionOf(ObjectSomeValuesFrom(:hasProtectionLevel ObjectOneOf(:Prot_Normal)) ObjectSomeValuesFrom(:hasProtectionLevel ObjectOneOf(:Prot_Signature))))
+SubClassOf(:NormalPermission ObjectSomeValuesFrom(:partOf ObjectOneOf(:Normal_Permissions)))
+
+# Class: :Permission (:Permission)
+
+EquivalentClasses(:Permission ObjectUnionOf(:DangerousPermission :NormalPermission))
+SubClassOf(:Permission :PreferenceObject)
+SubClassOf(:Permission ObjectSomeValuesFrom(:partOf ObjectOneOf(:Universal_Object)))
+SubClassOf(:Permission ObjectMaxCardinality(1 :hasProtectionLevel ObjectOneOf(:Prot_Dangerous :Prot_Normal :Prot_Signature)))
+SubClassOf(:Permission ObjectHasSelf(:hasPartDirectly))
+DisjointClasses(:Permission :PermissionGroup)
+
+# Class: :PermissionGroup (:PermissionGroup)
+
+SubClassOf(:PermissionGroup :PreferenceObject)
+
+# Class: :PermissionGroupPreference (:PermissionGroupPreference)
+
+EquivalentClasses(:PermissionGroupPreference ObjectSomeValuesFrom(:onPreferenceObject :PermissionGroup))
+SubClassOf(:PermissionGroupPreference :Preference)
+
+# Class: :PlayCategory (:PlayCategory)
+
+SubClassOf(:PlayCategory :ApplicationCategory)
+
+# Class: :Policy (:Policy)
+
+SubClassOf(:Policy owl:Thing)
+SubClassOf(:Policy ObjectSomeValuesFrom(:hasPart ObjectOneOf(:Pol_Android)))
+
+# Class: :Preference (:Preference)
+
+SubClassOf(:Preference owl:Thing)
+SubClassOf(:Preference ObjectMinCardinality(1 :onDescriptiveContext :DescriptiveContext))
+SubClassOf(:Preference ObjectExactCardinality(1 :onPreferenceAction :PreferenceAction))
+SubClassOf(:Preference ObjectExactCardinality(1 :onPreferenceObject :PreferenceObject))
+SubClassOf(:Preference ObjectExactCardinality(1 :onTargetContext :TargetContext))
+
+# Class: :PreferenceAction (:PreferenceAction)
+
+EquivalentClasses(:PreferenceAction ObjectOneOf(:Act_Not_Share :Act_Prompt_Group :Act_Prompt_Permission :Act_Share))
+SubClassOf(:PreferenceAction owl:Thing)
+
+# Class: :PreferenceObject (:PreferenceObject)
+
+SubClassOf(:PreferenceObject ObjectAllValuesFrom(:hasPart ObjectUnionOf(:Permission :PermissionGroup)))
+
+# Class: :ProtectionLevel (:ProtectionLevel)
+
+SubClassOf(:ProtectionLevel owl:Thing)
+
+# Class: :ProtectionLevelPreference (:ProtectionLevelPreference)
+
+EquivalentClasses(:ProtectionLevelPreference ObjectSomeValuesFrom(:onPreferenceObject ObjectOneOf(:Dangerous_Permissions :Normal_Permissions)))
+SubClassOf(:ProtectionLevelPreference :Preference)
+
+# Class: :SocialEnvironment (:SocialEnvironment)
+
+SubClassOf(:SocialEnvironment :DescriptiveContext)
+
+# Class: :TargetContext (:TargetContext)
+
+SubClassOf(:TargetContext ObjectAllValuesFrom(:hasPart ObjectUnionOf(:Application :ApplicationCategory)))
+DisjointClasses(:TargetContext ObjectUnionOf(:DescriptiveContext :PreferenceObject))
+
+# Class: :Time (:Time)
+
+SubClassOf(:Time :DescriptiveContext)
+DisjointClasses(:Time ObjectUnionOf(:Location :SocialEnvironment))
+
+# Class: :UniversalObjectPreference (:UniversalObjectPreference)
+
+EquivalentClasses(:UniversalObjectPreference ObjectSomeValuesFrom(:onPreferenceObject ObjectOneOf(:Universal_Object)))
+SubClassOf(:UniversalObjectPreference :Preference)
+
+# Class: :UniversalTargetPreference (:UniversalTargetPreference)
+
+EquivalentClasses(:UniversalTargetPreference ObjectSomeValuesFrom(:onTargetContext ObjectOneOf(:Universal_Target)))
+SubClassOf(:UniversalTargetPreference :Preference)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: apso:Mary_2 (apso:Mary_2)
+
+ClassAssertion(:Preference apso:Mary_2)
+ObjectPropertyAssertion(:onDescriptiveContext apso:Mary_2 device:DC_At_Work)
+ObjectPropertyAssertion(:onPreferenceAction apso:Mary_2 :Act_Not_Share)
+ObjectPropertyAssertion(:onPreferenceObject apso:Mary_2 :Universal_Object)
+ObjectPropertyAssertion(:onTargetContext apso:Mary_2 device:CC_Work_Apps)
+
+# Individual: apso:Traveling (apso:Traveling)
+
+ClassAssertion(apso:ContextIndicator apso:Traveling)
+DataPropertyAssertion(apso:isActive apso:Traveling "true"^^xsd:boolean)
+
+# Individual: :Act_Not_Share (:Act_Not_Share)
+
+
+# Individual: :Act_Prompt_Group (:Act_Prompt_Group)
+
+
+# Individual: :Act_Prompt_Permission (:Act_Prompt_Permission)
+
+
+# Individual: :Act_Share (:Act_Share)
+
+
+# Individual: :Android_1 (:Android_1)
+
+ClassAssertion(:Preference :Android_1)
+ObjectPropertyAssertion(:onDescriptiveContext :Android_1 :Universal_Description)
+ObjectPropertyAssertion(:onPreferenceAction :Android_1 :Act_Prompt_Group)
+ObjectPropertyAssertion(:onPreferenceObject :Android_1 :Dangerous_Permissions)
+ObjectPropertyAssertion(:onTargetContext :Android_1 :Universal_Target)
+
+# Individual: :Android_2 (:Android_2)
+
+ClassAssertion(:Preference :Android_2)
+ObjectPropertyAssertion(:onDescriptiveContext :Android_2 :Universal_Description)
+ObjectPropertyAssertion(:onPreferenceAction :Android_2 :Act_Share)
+ObjectPropertyAssertion(:onPreferenceObject :Android_2 :Normal_Permissions)
+ObjectPropertyAssertion(:onTargetContext :Android_2 :Universal_Target)
+
+# Individual: :Background_Permissions (:Background_Permissions)
+
+ClassAssertion(:PreferenceObject :Background_Permissions)
+ObjectPropertyAssertion(:hasPart :Background_Permissions perm:Access_Background_Location)
+
+# Individual: :Dangerous_Permissions (:Dangerous_Permissions)
+
+ClassAssertion(:PreferenceObject :Dangerous_Permissions)
+
+# Individual: :Normal_Permissions (:Normal_Permissions)
+
+ClassAssertion(:PreferenceObject :Normal_Permissions)
+
+# Individual: :Pol_Android (:Pol_Android)
+
+ClassAssertion(:Policy :Pol_Android)
+ObjectPropertyAssertion(:hasPreference :Pol_Android :Android_1)
+ObjectPropertyAssertion(:hasPreference :Pol_Android :Android_2)
+
+# Individual: :Prot_Dangerous (:Prot_Dangerous)
+
+ClassAssertion(:ProtectionLevel :Prot_Dangerous)
+
+# Individual: :Prot_Normal (:Prot_Normal)
+
+ClassAssertion(:ProtectionLevel :Prot_Normal)
+
+# Individual: :Prot_Signature (:Prot_Signature)
+
+ClassAssertion(:ProtectionLevel :Prot_Signature)
+
+# Individual: :Universal_Description (:Universal_Description)
+
+ClassAssertion(:DescriptiveContext :Universal_Description)
+
+# Individual: :Universal_Object (:Universal_Object)
+
+ClassAssertion(:PreferenceObject :Universal_Object)
+
+# Individual: :Universal_Target (:Universal_Target)
+
+ClassAssertion(:TargetContext :Universal_Target)
+
+# Individual: device:App_Authenticator (device:App_Authenticator)
+
+ClassAssertion(:Application device:App_Authenticator)
+ObjectPropertyAssertion(:hasAuthor device:App_Authenticator device:Author_Microsoft_Cooperation)
+ObjectPropertyAssertion(:partOf device:App_Authenticator device:CC_Work_Apps)
+ObjectPropertyAssertion(:partOf device:App_Authenticator device:PC_Business)
+
+# Individual: device:App_Hjelp113 (device:App_Hjelp113)
+
+ClassAssertion(:Application device:App_Hjelp113)
+ObjectPropertyAssertion(:hasAuthor device:App_Hjelp113 device:Author_Stiftelsen_Norsk_Luftambulanse)
+ObjectPropertyAssertion(:partOf device:App_Hjelp113 device:PC_Medical)
+
+# Individual: device:App_NRKTV (device:App_NRKTV)
+
+ClassAssertion(:Application device:App_NRKTV)
+ObjectPropertyAssertion(:hasAuthor device:App_NRKTV device:Author_NRK)
+ObjectPropertyAssertion(:partOf device:App_NRKTV device:PC_Entertainment)
+
+# Individual: device:App_Zoom (device:App_Zoom)
+
+ClassAssertion(:Application device:App_Zoom)
+ObjectPropertyAssertion(:hasAuthor device:App_Zoom device:Author_Zoom_us)
+ObjectPropertyAssertion(:partOf device:App_Zoom device:CC_Work_Apps)
+ObjectPropertyAssertion(:partOf device:App_Zoom device:PC_Business)
+
+# Individual: device:Author_Microsoft_Cooperation (device:Author_Microsoft_Cooperation)
+
+ClassAssertion(:ApplicationAuthor device:Author_Microsoft_Cooperation)
+
+# Individual: device:Author_NRK (device:Author_NRK)
+
+ClassAssertion(:ApplicationAuthor device:Author_NRK)
+
+# Individual: device:Author_Stiftelsen_Norsk_Luftambulanse (device:Author_Stiftelsen_Norsk_Luftambulanse)
+
+ClassAssertion(:ApplicationAuthor device:Author_Stiftelsen_Norsk_Luftambulanse)
+
+# Individual: device:Author_Zoom_us (device:Author_Zoom_us)
+
+ClassAssertion(:ApplicationAuthor device:Author_Zoom_us)
+
+# Individual: device:CC_Mary_Approved_Apps (device:CC_Mary_Approved_Apps)
+
+ClassAssertion(:CustomCategory device:CC_Mary_Approved_Apps)
+ObjectPropertyAssertion(:hasPart device:CC_Mary_Approved_Apps device:App_NRKTV)
+
+# Individual: device:CC_Microsoft_Apps (device:CC_Microsoft_Apps)
+
+ClassAssertion(:CustomCategory device:CC_Microsoft_Apps)
+ObjectPropertyAssertion(:hasPart device:CC_Microsoft_Apps device:App_Authenticator)
+
+# Individual: device:CC_Work_Apps (device:CC_Work_Apps)
+
+ClassAssertion(:CustomCategory device:CC_Work_Apps)
+
+# Individual: device:Child_1 (device:Child_1)
+
+ClassAssertion(:Preference device:Child_1)
+ObjectPropertyAssertion(:onDescriptiveContext device:Child_1 :Universal_Description)
+ObjectPropertyAssertion(:onPreferenceAction device:Child_1 :Act_Share)
+ObjectPropertyAssertion(:onPreferenceObject device:Child_1 :Universal_Object)
+ObjectPropertyAssertion(:onTargetContext device:Child_1 device:CC_Mary_Approved_Apps)
+
+# Individual: device:DC_At_Work (device:DC_At_Work)
+
+ClassAssertion(:DescriptiveContext device:DC_At_Work)
+
+# Individual: device:Henry_1 (device:Henry_1)
+
+ClassAssertion(:Preference device:Henry_1)
+ObjectPropertyAssertion(:onDescriptiveContext device:Henry_1 :Universal_Description)
+ObjectPropertyAssertion(:onPreferenceAction device:Henry_1 :Act_Share)
+ObjectPropertyAssertion(:onPreferenceObject device:Henry_1 :Universal_Object)
+ObjectPropertyAssertion(:onTargetContext device:Henry_1 device:CC_Microsoft_Apps)
+
+# Individual: device:Henry_2 (device:Henry_2)
+
+ClassAssertion(:Preference device:Henry_2)
+ObjectPropertyAssertion(:onDescriptiveContext device:Henry_2 :Universal_Description)
+ObjectPropertyAssertion(:onPreferenceAction device:Henry_2 :Act_Not_Share)
+ObjectPropertyAssertion(:onPreferenceObject device:Henry_2 perm:Access_Background_Location)
+ObjectPropertyAssertion(:onTargetContext device:Henry_2 :Universal_Target)
+
+# Individual: device:Henry_3 (device:Henry_3)
+
+ClassAssertion(:Preference device:Henry_3)
+ObjectPropertyAssertion(:onDescriptiveContext device:Henry_3 :Universal_Description)
+ObjectPropertyAssertion(:onPreferenceAction device:Henry_3 :Act_Share)
+ObjectPropertyAssertion(:onPreferenceObject device:Henry_3 perm:Access_Background_Location)
+ObjectPropertyAssertion(:onTargetContext device:Henry_3 device:App_Hjelp113)
+
+# Individual: device:Mary_1 (device:Mary_1)
+
+ClassAssertion(:Preference device:Mary_1)
+ObjectPropertyAssertion(:onDescriptiveContext device:Mary_1 device:DC_At_Work)
+ObjectPropertyAssertion(:onPreferenceAction device:Mary_1 :Act_Share)
+ObjectPropertyAssertion(:onPreferenceObject device:Mary_1 :Universal_Object)
+ObjectPropertyAssertion(:onTargetContext device:Mary_1 device:CC_Work_Apps)
+
+# Individual: device:PC_Business (device:PC_Business)
+
+ClassAssertion(:PlayCategory device:PC_Business)
+
+# Individual: device:PC_Entertainment (device:PC_Entertainment)
+
+ClassAssertion(:PlayCategory device:PC_Entertainment)
+
+# Individual: device:PC_Medical (device:PC_Medical)
+
+ClassAssertion(:PlayCategory device:PC_Medical)
+
+# Individual: device:Pol_Cece (device:Pol_Cece)
+
+ClassAssertion(:Policy device:Pol_Cece)
+ObjectPropertyAssertion(:hasPart device:Pol_Cece device:Pol_Child)
+
+# Individual: device:Pol_Child (device:Pol_Child)
+
+ClassAssertion(:Policy device:Pol_Child)
+ObjectPropertyAssertion(:hasPreference device:Pol_Child device:Child_1)
+
+# Individual: device:Pol_Henry (device:Pol_Henry)
+
+ClassAssertion(:Policy device:Pol_Henry)
+ObjectPropertyAssertion(:hasPreference device:Pol_Henry device:Henry_1)
+ObjectPropertyAssertion(:hasPreference device:Pol_Henry device:Henry_2)
+ObjectPropertyAssertion(:hasPreference device:Pol_Henry device:Henry_3)
+
+# Individual: device:Pol_Mary (device:Pol_Mary)
+
+ClassAssertion(:Policy device:Pol_Mary)
+ObjectPropertyAssertion(:hasPreference device:Pol_Mary device:Mary_1)
+
+# Individual: perm:Accept_Handover (perm:Accept_Handover)
+
+ClassAssertion(:Permission perm:Accept_Handover)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Accept_Handover :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Accept_Handover perm:Group_Phone)
+
+# Individual: perm:Access_Background_Location (perm:Access_Background_Location)
+
+ClassAssertion(:Permission perm:Access_Background_Location)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Access_Background_Location :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Access_Background_Location perm:Group_Location)
+
+# Individual: perm:Access_Coarse_Location (perm:Access_Coarse_Location)
+
+ClassAssertion(:Permission perm:Access_Coarse_Location)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Access_Coarse_Location :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Access_Coarse_Location perm:Group_Location)
+
+# Individual: perm:Access_Fine_Location (perm:Access_Fine_Location)
+
+ClassAssertion(:Permission perm:Access_Fine_Location)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Access_Fine_Location :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Access_Fine_Location perm:Group_Location)
+
+# Individual: perm:Access_Media_Location (perm:Access_Media_Location)
+
+ClassAssertion(:Permission perm:Access_Media_Location)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Access_Media_Location :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Access_Media_Location perm:Group_Storage)
+
+# Individual: perm:Activity_Recognition (perm:Activity_Recognition)
+
+ClassAssertion(:Permission perm:Activity_Recognition)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Activity_Recognition :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Activity_Recognition perm:Group_Activity_Recognition)
+
+# Individual: perm:Add_Voicemail (perm:Add_Voicemail)
+
+ClassAssertion(:Permission perm:Add_Voicemail)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Add_Voicemail :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Add_Voicemail perm:Group_Phone)
+
+# Individual: perm:Answer_Phone_Calls (perm:Answer_Phone_Calls)
+
+ClassAssertion(:Permission perm:Answer_Phone_Calls)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Answer_Phone_Calls :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Answer_Phone_Calls perm:Group_Phone)
+
+# Individual: perm:Body_Sensors (perm:Body_Sensors)
+
+ClassAssertion(:Permission perm:Body_Sensors)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Body_Sensors :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Body_Sensors perm:Group_Sensors)
+
+# Individual: perm:Call_Companion_App (perm:Call_Companion_App)
+
+ClassAssertion(:Permission perm:Call_Companion_App)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Call_Companion_App :Prot_Normal)
+ObjectPropertyAssertion(:partOf perm:Call_Companion_App perm:Group_Phone)
+
+# Individual: perm:Call_Phone (perm:Call_Phone)
+
+ClassAssertion(:Permission perm:Call_Phone)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Call_Phone :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Call_Phone perm:Group_Phone)
+
+# Individual: perm:Camera (perm:Camera)
+
+ClassAssertion(:Permission perm:Camera)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Camera :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Camera perm:Group_Camera)
+
+# Individual: perm:Group_Activity_Recognition (perm:Group_Activity_Recognition)
+
+ClassAssertion(:PermissionGroup perm:Group_Activity_Recognition)
+
+# Individual: perm:Group_Calendar (perm:Group_Calendar)
+
+ClassAssertion(:PermissionGroup perm:Group_Calendar)
+
+# Individual: perm:Group_Call_Log (perm:Group_Call_Log)
+
+ClassAssertion(:PermissionGroup perm:Group_Call_Log)
+
+# Individual: perm:Group_Camera (perm:Group_Camera)
+
+ClassAssertion(:PermissionGroup perm:Group_Camera)
+
+# Individual: perm:Group_Contacts (perm:Group_Contacts)
+
+ClassAssertion(:PermissionGroup perm:Group_Contacts)
+
+# Individual: perm:Group_Location (perm:Group_Location)
+
+ClassAssertion(:PermissionGroup perm:Group_Location)
+
+# Individual: perm:Group_Microphone (perm:Group_Microphone)
+
+ClassAssertion(:PermissionGroup perm:Group_Microphone)
+
+# Individual: perm:Group_Phone (perm:Group_Phone)
+
+ClassAssertion(:PermissionGroup perm:Group_Phone)
+
+# Individual: perm:Group_Sensors (perm:Group_Sensors)
+
+ClassAssertion(:PermissionGroup perm:Group_Sensors)
+
+# Individual: perm:Group_Sms (perm:Group_Sms)
+
+ClassAssertion(:PermissionGroup perm:Group_Sms)
+
+# Individual: perm:Group_Storage (perm:Group_Storage)
+
+ClassAssertion(:PermissionGroup perm:Group_Storage)
+
+# Individual: perm:High_Sampling_Rate_Sensors (perm:High_Sampling_Rate_Sensors)
+
+ClassAssertion(:Permission perm:High_Sampling_Rate_Sensors)
+ObjectPropertyAssertion(:hasProtectionLevel perm:High_Sampling_Rate_Sensors :Prot_Normal)
+ObjectPropertyAssertion(:partOf perm:High_Sampling_Rate_Sensors perm:Group_Sensors)
+
+# Individual: perm:Manage_External_Storage (perm:Manage_External_Storage)
+
+ClassAssertion(:Permission perm:Manage_External_Storage)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Manage_External_Storage :Prot_Signature)
+ObjectPropertyAssertion(:partOf perm:Manage_External_Storage perm:Group_Storage)
+
+# Individual: perm:Manage_Media (perm:Manage_Media)
+
+ClassAssertion(:Permission perm:Manage_Media)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Manage_Media :Prot_Signature)
+ObjectPropertyAssertion(:partOf perm:Manage_Media perm:Group_Storage)
+
+# Individual: perm:Manage_Own_Calls (perm:Manage_Own_Calls)
+
+ClassAssertion(:Permission perm:Manage_Own_Calls)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Manage_Own_Calls :Prot_Normal)
+ObjectPropertyAssertion(:partOf perm:Manage_Own_Calls perm:Group_Phone)
+
+# Individual: perm:Process_Outgoing_Calls (perm:Process_Outgoing_Calls)
+
+ClassAssertion(:Permission perm:Process_Outgoing_Calls)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Process_Outgoing_Calls :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Process_Outgoing_Calls perm:Group_Call_Log)
+
+# Individual: perm:Read_Basic_Phone_State (perm:Read_Basic_Phone_State)
+
+ClassAssertion(:Permission perm:Read_Basic_Phone_State)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Read_Basic_Phone_State :Prot_Normal)
+ObjectPropertyAssertion(:partOf perm:Read_Basic_Phone_State perm:Group_Phone)
+
+# Individual: perm:Read_Calendar (perm:Read_Calendar)
+
+ClassAssertion(:Permission perm:Read_Calendar)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Read_Calendar :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Read_Calendar perm:Group_Calendar)
+
+# Individual: perm:Read_Call_Log (perm:Read_Call_Log)
+
+ClassAssertion(:Permission perm:Read_Call_Log)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Read_Call_Log :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Read_Call_Log perm:Group_Call_Log)
+
+# Individual: perm:Read_Contacts (perm:Read_Contacts)
+
+ClassAssertion(:Permission perm:Read_Contacts)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Read_Contacts :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Read_Contacts perm:Group_Contacts)
+
+# Individual: perm:Read_External_Storage (perm:Read_External_Storage)
+
+ClassAssertion(:Permission perm:Read_External_Storage)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Read_External_Storage :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Read_External_Storage perm:Group_Storage)
+
+# Individual: perm:Read_Phone_Numbers (perm:Read_Phone_Numbers)
+
+ClassAssertion(:Permission perm:Read_Phone_Numbers)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Read_Phone_Numbers :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Read_Phone_Numbers perm:Group_Phone)
+
+# Individual: perm:Read_Phone_State (perm:Read_Phone_State)
+
+ClassAssertion(:Permission perm:Read_Phone_State)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Read_Phone_State :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Read_Phone_State perm:Group_Phone)
+
+# Individual: perm:Read_Sms (perm:Read_Sms)
+
+ClassAssertion(:Permission perm:Read_Sms)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Read_Sms :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Read_Sms perm:Group_Sms)
+
+# Individual: perm:Receive_Mms (perm:Receive_Mms)
+
+ClassAssertion(:Permission perm:Receive_Mms)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Receive_Mms :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Receive_Mms perm:Group_Sms)
+
+# Individual: perm:Receive_Sms (perm:Receive_Sms)
+
+ClassAssertion(:Permission perm:Receive_Sms)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Receive_Sms :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Receive_Sms perm:Group_Sms)
+
+# Individual: perm:Receive_Wap_Push (perm:Receive_Wap_Push)
+
+ClassAssertion(:Permission perm:Receive_Wap_Push)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Receive_Wap_Push :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Receive_Wap_Push perm:Group_Sms)
+
+# Individual: perm:Record_Audio (perm:Record_Audio)
+
+ClassAssertion(:Permission perm:Record_Audio)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Record_Audio :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Record_Audio perm:Group_Microphone)
+
+# Individual: perm:Send_Sms (perm:Send_Sms)
+
+ClassAssertion(:Permission perm:Send_Sms)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Send_Sms :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Send_Sms perm:Group_Sms)
+
+# Individual: perm:Use_Biometric (perm:Use_Biometric)
+
+ClassAssertion(:Permission perm:Use_Biometric)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Use_Biometric :Prot_Normal)
+ObjectPropertyAssertion(:partOf perm:Use_Biometric perm:Group_Sensors)
+
+# Individual: perm:Use_Fingerprint (perm:Use_Fingerprint)
+
+ClassAssertion(:Permission perm:Use_Fingerprint)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Use_Fingerprint :Prot_Normal)
+ObjectPropertyAssertion(:partOf perm:Use_Fingerprint perm:Group_Sensors)
+
+# Individual: perm:Use_Sip (perm:Use_Sip)
+
+ClassAssertion(:Permission perm:Use_Sip)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Use_Sip :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Use_Sip perm:Group_Phone)
+
+# Individual: perm:Write_Calendar (perm:Write_Calendar)
+
+ClassAssertion(:Permission perm:Write_Calendar)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Write_Calendar :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Write_Calendar perm:Group_Calendar)
+
+# Individual: perm:Write_Call_Log (perm:Write_Call_Log)
+
+ClassAssertion(:Permission perm:Write_Call_Log)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Write_Call_Log :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Write_Call_Log perm:Group_Call_Log)
+
+# Individual: perm:Write_Contacts (perm:Write_Contacts)
+
+ClassAssertion(:Permission perm:Write_Contacts)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Write_Contacts :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Write_Contacts perm:Group_Contacts)
+
+# Individual: perm:Write_External_Storage (perm:Write_External_Storage)
+
+ClassAssertion(:Permission perm:Write_External_Storage)
+ObjectPropertyAssertion(:hasProtectionLevel perm:Write_External_Storage :Prot_Dangerous)
+ObjectPropertyAssertion(:partOf perm:Write_External_Storage perm:Group_Storage)
+
+
+DifferentIndividuals(:Act_Not_Share :Act_Prompt_Group)
+DifferentIndividuals(:Act_Not_Share :Act_Prompt_Permission)
+DifferentIndividuals(:Act_Not_Share :Act_Share)
+DifferentIndividuals(:Act_Prompt_Group :Act_Prompt_Permission)
+DifferentIndividuals(:Act_Prompt_Group :Act_Share)
+DifferentIndividuals(:Act_Prompt_Permission :Act_Share)
+DifferentIndividuals(:Prot_Dangerous :Prot_Normal)
+DifferentIndividuals(:Prot_Dangerous :Prot_Signature)
+DifferentIndividuals(:Prot_Normal :Prot_Signature)
+SubObjectPropertyOf(ObjectPropertyChain(:hasPart :hasPreference) :hasPreference)
+DLSafeRule(Body(ClassAtom(:Preference Variable(<urn:swrl:var#x1>)) ClassAtom(:Preference Variable(<urn:swrl:var#x2>)) DifferentIndividualsAtom(Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#x2>)) ObjectPropertyAtom(:onDescriptiveContext Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y1>)) ObjectPropertyAtom(:onDescriptiveContext Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y1>)) ObjectPropertyAtom(:onTargetContext Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y2>)) ObjectPropertyAtom(:onPreferenceObject Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y3>)) ObjectPropertyAtom(:onTargetContext Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y22>)) ObjectPropertyAtom(:onPreferenceObject Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y33>)) ClassAtom(:Application Variable(<urn:swrl:var#z1>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y2>) Variable(<urn:swrl:var#z1>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y22>) Variable(<urn:swrl:var#z1>)) ClassAtom(:Permission Variable(<urn:swrl:var#z2>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y3>) Variable(<urn:swrl:var#z2>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y33>) Variable(<urn:swrl:var#z2>)) ObjectPropertyAtom(:onPreferenceAction Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y4>)) ObjectPropertyAtom(:onPreferenceAction Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y4>)))Head(ObjectPropertyAtom(apso:isCorrelatedWith Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#x2>))))
+DLSafeRule(Annotation(swrla:isRuleEnabled "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "S2") Body(ClassAtom(:Preference Variable(<urn:swrl:var#x1>)) ClassAtom(:Preference Variable(<urn:swrl:var#x2>)) ObjectPropertyAtom(:onDescriptiveContext Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y1>)) ObjectPropertyAtom(:onDescriptiveContext Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y1>)) ObjectPropertyAtom(:onTargetContext Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y2>)) ObjectPropertyAtom(:onPreferenceObject Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y3>)) ObjectPropertyAtom(:onTargetContext Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y22>)) ObjectPropertyAtom(:onPreferenceObject Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y33>)) ClassAtom(:Application Variable(<urn:swrl:var#z1>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y2>) Variable(<urn:swrl:var#z1>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y22>) Variable(<urn:swrl:var#z1>)) ClassAtom(:Permission Variable(<urn:swrl:var#z2>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y3>) Variable(<urn:swrl:var#z2>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y33>) Variable(<urn:swrl:var#z2>)) ObjectPropertyAtom(:onPreferenceAction Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y4>)) ObjectPropertyAtom(:onPreferenceAction Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y5>)) DifferentIndividualsAtom(Variable(<urn:swrl:var#y4>) Variable(<urn:swrl:var#y5>)))Head(ObjectPropertyAtom(apso:conflicts Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#x2>))))
+DLSafeRule(Annotation(swrla:isRuleEnabled "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "S3") Body(ClassAtom(:Preference Variable(<urn:swrl:var#x1>)) ClassAtom(:Preference Variable(<urn:swrl:var#x2>)) ObjectPropertyAtom(:onDescriptiveContext Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y1>)) ObjectPropertyAtom(:onDescriptiveContext Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y1>)) ObjectPropertyAtom(:onTargetContext Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y2>)) ObjectPropertyAtom(:onPreferenceObject Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y3>)) ObjectPropertyAtom(:onTargetContext Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y22>)) ObjectPropertyAtom(:onPreferenceObject Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y33>)) ClassAtom(:Application Variable(<urn:swrl:var#z1>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y2>) Variable(<urn:swrl:var#z1>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y22>) Variable(<urn:swrl:var#z1>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y3>) Variable(<urn:swrl:var#z2>)) ObjectPropertyAtom(:hasPart Variable(<urn:swrl:var#y33>) Variable(<urn:swrl:var#z3>)) ObjectPropertyAtom(apso:dependsOn Variable(<urn:swrl:var#z2>) Variable(<urn:swrl:var#z3>)) ObjectPropertyAtom(:onPreferenceAction Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#y4>)) ObjectPropertyAtom(:onPreferenceAction Variable(<urn:swrl:var#x2>) Variable(<urn:swrl:var#y5>)) SameIndividualAtom(Variable(<urn:swrl:var#y4>) :Act_Share) DifferentIndividualsAtom(Variable(<urn:swrl:var#y4>) Variable(<urn:swrl:var#y5>)))Head(ObjectPropertyAtom(apso:conflicts Variable(<urn:swrl:var#x1>) Variable(<urn:swrl:var#x2>))))
+)
