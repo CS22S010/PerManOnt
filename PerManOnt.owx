@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://w3id.org/permanont"
-     versionIRI="https://w3id.org/permanont">
+     versionIRI="https://w3id.org/permanont/1.0.0">
     <Prefix name="" IRI="http://www.semanticweb.org/ontologies/2022/1/apso/core#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
