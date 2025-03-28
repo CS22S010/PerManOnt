@@ -7,23 +7,23 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://w3id.org/permanont"
      versionIRI="https://w3id.org/permanont/1.0.0">
-    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/2022/1/apso/core#"/>
+    <Prefix name="" IRI="https://w3id.org/permanont/core#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="apso" IRI="http://www.semanticweb.org/ontologies/2022/1/apso/"/>
-    <Prefix name="perm" IRI="http://www.semanticweb.org/ontologies/2022/1/apso/perm#"/>
+    <Prefix name="permanont" IRI="https://w3id.org/permanont/"/>
+    <Prefix name="perm" IRI="https://w3id.org/permanont/perm#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
     <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
     <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
-    <Prefix name="device" IRI="http://www.semanticweb.org/ontologies/2022/1/apso/device#"/>
+    <Prefix name="device" IRI="https://w3id.org/permanont/device#"/>
     <Declaration>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="apso:CurrentContext"/>
+        <Class abbreviatedIRI="permanont:CurrentContext"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI=":Application"/>
@@ -107,19 +107,19 @@
         <Class abbreviatedIRI=":UniversalTargetPreference"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="apso:canNotOccurWith"/>
+        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="apso:conflicts"/>
+        <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="apso:dependsOn"/>
+        <ObjectProperty abbreviatedIRI="permanont:dependsOn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="apso:hasContextIndicator"/>
+        <ObjectProperty abbreviatedIRI="permanont:hasContextIndicator"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="apso:isCorrelatedWith"/>
+        <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI=":hasAuthor"/>
@@ -152,16 +152,16 @@
         <ObjectProperty abbreviatedIRI=":partOf"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="apso:isActive"/>
+        <DataProperty abbreviatedIRI="permanont:isActive"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="apso:level"/>
+        <DataProperty abbreviatedIRI="permanont:level"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="apso:Mary_2"/>
+        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="apso:Traveling"/>
+        <NamedIndividual abbreviatedIRI="permanont:Traveling"/>
     </Declaration>
     <Declaration>
         <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
@@ -504,23 +504,23 @@
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <SubClassOf>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
         <Class abbreviatedIRI=":DescriptiveContext"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
         <ObjectHasSelf>
             <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
         </ObjectHasSelf>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="apso:CurrentContext"/>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
+        <Class abbreviatedIRI="permanont:CurrentContext"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="apso:CurrentContext"/>
+        <Class abbreviatedIRI="permanont:CurrentContext"/>
         <DataHasValue>
-            <DataProperty abbreviatedIRI="apso:isActive"/>
+            <DataProperty abbreviatedIRI="permanont:isActive"/>
             <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
         </DataHasValue>
     </SubClassOf>
@@ -603,7 +603,7 @@
         <ObjectAllValuesFrom>
             <ObjectProperty abbreviatedIRI=":hasPart"/>
             <ObjectUnionOf>
-                <Class abbreviatedIRI="apso:ContextIndicator"/>
+                <Class abbreviatedIRI="permanont:ContextIndicator"/>
                 <Class abbreviatedIRI=":DescriptiveContext"/>
             </ObjectUnionOf>
         </ObjectAllValuesFrom>
@@ -819,11 +819,11 @@
     </DisjointClasses>
     <ClassAssertion>
         <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI="apso:Mary_2"/>
+        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
-        <NamedIndividual abbreviatedIRI="apso:Traveling"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
+        <NamedIndividual abbreviatedIRI="permanont:Traveling"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI=":Preference"/>
@@ -1199,22 +1199,22 @@
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI="apso:Mary_2"/>
+        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
         <NamedIndividual abbreviatedIRI="device:DC_At_Work"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI="apso:Mary_2"/>
+        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
         <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI="apso:Mary_2"/>
+        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
         <NamedIndividual abbreviatedIRI=":Universal_Object"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI="apso:Mary_2"/>
+        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
         <NamedIndividual abbreviatedIRI="device:CC_Work_Apps"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -1833,16 +1833,16 @@
         <NamedIndividual abbreviatedIRI="perm:Group_Storage"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI="apso:isActive"/>
-        <NamedIndividual abbreviatedIRI="apso:Traveling"/>
+        <DataProperty abbreviatedIRI="permanont:isActive"/>
+        <NamedIndividual abbreviatedIRI="permanont:Traveling"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI="apso:canNotOccurWith"/>
+        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI="apso:hasContextIndicator"/>
+        <ObjectProperty abbreviatedIRI="permanont:hasContextIndicator"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1890,13 +1890,13 @@
         <ObjectProperty abbreviatedIRI=":partOf"/>
     </InverseObjectProperties>
     <SymmetricObjectProperty>
-        <ObjectProperty abbreviatedIRI="apso:canNotOccurWith"/>
+        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
     </SymmetricObjectProperty>
     <SymmetricObjectProperty>
-        <ObjectProperty abbreviatedIRI="apso:conflicts"/>
+        <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
     </SymmetricObjectProperty>
     <SymmetricObjectProperty>
-        <ObjectProperty abbreviatedIRI="apso:isCorrelatedWith"/>
+        <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
     </SymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty abbreviatedIRI=":hasPart"/>
@@ -1905,23 +1905,23 @@
         <ObjectProperty abbreviatedIRI=":partOf"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="apso:canNotOccurWith"/>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
+        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="apso:conflicts"/>
+        <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
         <Class abbreviatedIRI=":Preference"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="apso:dependsOn"/>
+        <ObjectProperty abbreviatedIRI="permanont:dependsOn"/>
         <Class abbreviatedIRI=":Permission"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="apso:hasContextIndicator"/>
+        <ObjectProperty abbreviatedIRI="permanont:hasContextIndicator"/>
         <Class abbreviatedIRI=":DescriptiveContext"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="apso:isCorrelatedWith"/>
+        <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
         <Class abbreviatedIRI=":Preference"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1949,23 +1949,23 @@
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="apso:canNotOccurWith"/>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
+        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="apso:conflicts"/>
+        <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
         <Class abbreviatedIRI=":Preference"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="apso:dependsOn"/>
+        <ObjectProperty abbreviatedIRI="permanont:dependsOn"/>
         <Class abbreviatedIRI=":Permission"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="apso:hasContextIndicator"/>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
+        <ObjectProperty abbreviatedIRI="permanont:hasContextIndicator"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="apso:isCorrelatedWith"/>
+        <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
         <Class abbreviatedIRI=":Preference"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2016,30 +2016,30 @@
         <ObjectProperty abbreviatedIRI=":hasPreference"/>
     </SubObjectPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI="apso:isActive"/>
+        <DataProperty abbreviatedIRI="permanont:isActive"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI="apso:level"/>
+        <DataProperty abbreviatedIRI="permanont:level"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <FunctionalDataProperty>
-        <DataProperty abbreviatedIRI="apso:isActive"/>
+        <DataProperty abbreviatedIRI="permanont:isActive"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="apso:isActive"/>
-        <Class abbreviatedIRI="apso:ContextIndicator"/>
+        <DataProperty abbreviatedIRI="permanont:isActive"/>
+        <Class abbreviatedIRI="permanont:ContextIndicator"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="apso:level"/>
+        <DataProperty abbreviatedIRI="permanont:level"/>
         <Class abbreviatedIRI=":DescriptiveContext"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty abbreviatedIRI="apso:isActive"/>
+        <DataProperty abbreviatedIRI="permanont:isActive"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty abbreviatedIRI="apso:level"/>
+        <DataProperty abbreviatedIRI="permanont:level"/>
         <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
     </DataPropertyRange>
     <DLSafeRule>
@@ -2127,7 +2127,7 @@
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="apso:isCorrelatedWith"/>
+                <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ObjectPropertyAtom>
@@ -2230,7 +2230,7 @@
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="apso:conflicts"/>
+                <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ObjectPropertyAtom>
@@ -2313,7 +2313,7 @@
                 <Variable IRI="urn:swrl:var#z3"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="apso:dependsOn"/>
+                <ObjectProperty abbreviatedIRI="permanont:dependsOn"/>
                 <Variable IRI="urn:swrl:var#z2"/>
                 <Variable IRI="urn:swrl:var#z3"/>
             </ObjectPropertyAtom>
@@ -2338,7 +2338,7 @@
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="apso:conflicts"/>
+                <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ObjectPropertyAtom>
