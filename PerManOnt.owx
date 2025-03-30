@@ -19,6 +19,43 @@
     <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
     <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
     <Prefix name="device" IRI="https://w3id.org/permanont/device#"/>
+	<Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+        <Literal>PerManOnt: Permission Management Ontology for Smart Devices</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+        <Literal>30th March 2025</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <Literal>An ontology to manage permissions in smart device application</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <Literal>TBA</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
+        <Literal>https://creativecommons.org/licenses/by/4.0/legalcode</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+        <Literal>30th March 2025</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/publisher"/>
+        <Literal>TBA</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+        <Literal>permanont</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceURI"/>
+        <Literal>https://w3id.org/permanont</Literal>
+    </Annotation>
+
     <Declaration>
         <Class abbreviatedIRI="permanont:ContextIndicator"/>
     </Declaration>
@@ -430,6 +467,37 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
     </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/publisher"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceURI"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+    </Declaration>
+
     <EquivalentClasses>
         <Class abbreviatedIRI=":ApplicationTargetPreference"/>
         <ObjectSomeValuesFrom>
