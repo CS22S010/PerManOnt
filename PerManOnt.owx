@@ -2425,7 +2425,7 @@
         <Literal>isCorrelatedWith</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/level</IRI>
         <Literal>It is a dataype property that determines the order of descriptive context</Literal>
     </AnnotationAssertion>
