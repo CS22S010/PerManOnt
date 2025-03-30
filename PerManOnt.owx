@@ -52,7 +52,7 @@
         <Literal>permanont</Literal>
     </Annotation>
     <Annotation>
-        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceURI"/>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceUri"/>
         <Literal>https://w3id.org/permanont</Literal>
     </Annotation>
 
@@ -492,7 +492,7 @@
         <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceURI"/>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceUri"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
