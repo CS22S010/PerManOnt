@@ -20,6 +20,11 @@
     <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
     <Prefix name="device" IRI="https://w3id.org/permanont/device#"/>
 	<Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+        <Literal>Vishal S</Literal>
+    </Annotation>
+
+	<Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
         <Literal>PerManOnt: Permission Management Ontology for Smart Devices</Literal>
     </Annotation>
@@ -463,6 +468,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual abbreviatedIRI="perm:Write_External_Storage"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
