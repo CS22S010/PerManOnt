@@ -2366,6 +2366,56 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/canNotOccurWith</IRI>
+        <Literal>It related two context indicators that cannot be active at the same time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/canNotOccurWith</IRI>
+        <Literal>canNotOccurWith</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/conflicts</IRI>
+        <Literal>It relates two preferences that conflicts with each other</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/conflicts</IRI>
+        <Literal>conflicts</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/dependsOn</IRI>
+        <Literal>It relates a permission with another permission it is dependant on</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/dependsOn</IRI>
+        <Literal>dependsOn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/hasContextIndicator</IRI>
+        <Literal>It relates a descriptive context with it&apos;s individual context indicators</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/hasContextIndicator</IRI>
+        <Literal>hasContextIndicator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/isCorrelatedWith</IRI>
+        <Literal>It relates two preferences that correlate with each other</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/isCorrelatedWith</IRI>
+        <Literal>isCorrelatedWith</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#Application</IRI>
         <Literal>It encompasses individuals representing a device’s installed applications.</Literal>
     </AnnotationAssertion>
@@ -2397,8 +2447,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#ApplicationTargetPreference</IRI>
-        <Literal>It encompasses individuals representing preferences, each being defined to
-have an application as its target context.</Literal>
+        <Literal>It encompasses individuals representing preferences, each being defined to have an application as its target context.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2408,8 +2457,7 @@ have an application as its target context.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#BackgroundPermission</IRI>
-        <Literal>It encompasses individuals representing permissions that are considered
-background permissions in Android.</Literal>
+        <Literal>It encompasses individuals representing permissions that are considered background permissions in Android.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2419,8 +2467,7 @@ background permissions in Android.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#ConditionalContext</IRI>
-        <Literal>It encompasses individuals representing contexts that can be used to
-determine when a preference is active</Literal>
+        <Literal>It encompasses individuals representing contexts that can be used to determine when a preference is active</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2440,8 +2487,7 @@ determine when a preference is active</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#DangerousPermission</IRI>
-        <Literal>It encompasses individuals representing dangerous permissions, i.e.,
-permissions having a dangerous protection level</Literal>
+        <Literal>It encompasses individuals representing dangerous permissions, i.e., permissions having a dangerous protection level</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2451,9 +2497,7 @@ permissions having a dangerous protection level</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#DescriptiveContext</IRI>
-        <Literal>It encompasses individuals representing descriptive contexts, i.e., information
-that describes a user’s surroundings and can be used to partially define
-when a preference is active</Literal>
+        <Literal>It encompasses individuals representing descriptive contexts, i.e., information that describes a user’s surroundings and can be used to partially define when a preference is active</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2463,8 +2507,7 @@ when a preference is active</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#GroupTargetPreference</IRI>
-        <Literal>It encompasses individuals representing preferences, each being defined to
-have an application category as its target context</Literal>
+        <Literal>It encompasses individuals representing preferences, each being defined to have an application category as its target context</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2474,8 +2517,7 @@ have an application category as its target context</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#Location</IRI>
-        <Literal>It encompasses individuals representing preferences, each being defined to
-have an application category as its target context.</Literal>
+        <Literal>It encompasses individuals representing real-world locations</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2485,8 +2527,7 @@ have an application category as its target context.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#NormalPermission</IRI>
-        <Literal>It encompasses individuals representing non-dangerous permissions, i.e.,
-permissions with a normal or signature protection level</Literal>
+        <Literal>It encompasses individuals representing non-dangerous permissions, i.e., permissions with a normal or signature protection level</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2516,8 +2557,7 @@ permissions with a normal or signature protection level</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#PermissionGroupPreference</IRI>
-        <Literal>It encompasses individuals representing preferences, each being defined to
-have a permission group as its preference objects</Literal>
+        <Literal>It encompasses individuals representing preferences, each being defined to have a permission group as its preference objects</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2527,8 +2567,7 @@ have a permission group as its preference objects</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#PlayCategory</IRI>
-        <Literal>It encompasses individuals, each representing a Play Store application
-category</Literal>
+        <Literal>It encompasses individuals, each representing a Play Store application category</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2546,6 +2585,11 @@ category</Literal>
         <Literal>Policy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#Preference</IRI>
+        <Literal>It encompasses individuals representing users’ permission-sharing preferences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>/core#Preference</IRI>
         <Literal>Preference</Literal>
@@ -2553,8 +2597,7 @@ category</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#PreferenceAction</IRI>
-        <Literal>It encompasses individuals representing permission-sharing actions that a
-user’s preferences can assert</Literal>
+        <Literal>It encompasses individuals representing permission-sharing actions that a user’s preferences can assert</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2564,9 +2607,7 @@ user’s preferences can assert</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#PreferenceObject</IRI>
-        <Literal>It encompasses individuals representing permissions, or groups of permissions,
-and can be used to define which permissions a preference regulates,
-partially defining when a preference is active</Literal>
+        <Literal>It encompasses individuals representing permissions, or groups of permissions, and can be used to define which permissions a preference regulates,partially defining when a preference is active</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2576,8 +2617,7 @@ partially defining when a preference is active</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#ProtectionLevel</IRI>
-        <Literal>It encompasses individuals representing protection levels that permissions
-can have</Literal>
+        <Literal>It encompasses individuals representing protection levels that permissions can have</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2587,9 +2627,7 @@ can have</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#ProtectionLevelPreference</IRI>
-        <Literal>It encompasses individuals representing preferences, each defined as
-having a preference object that groups permissions having the same
-protection level</Literal>
+        <Literal>It encompasses individuals representing preferences, each defined as having a preference object that groups permissions having the same protection level</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2599,8 +2637,7 @@ protection level</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#SocialEnvironment</IRI>
-        <Literal>It encompasses individuals representing social environments, such as
-being with colleagues</Literal>
+        <Literal>It encompasses individuals representing social environments, such as being with colleagues</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2610,9 +2647,7 @@ being with colleagues</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#TargetContext</IRI>
-        <Literal>It encompasses individuals representing applications or groups of applications
-and can be used to define which applications a preference is concerned
-with, partially defining when the preference is active</Literal>
+        <Literal>It encompasses individuals representing applications or groups of applications and can be used to define which applications a preference is concerned with, partially defining when the preference is active</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2622,8 +2657,7 @@ with, partially defining when the preference is active</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#Time</IRI>
-        <Literal>It encompasses individuals that represent time, for instance, weekdays
-between nine and five</Literal>
+        <Literal>It encompasses individuals that represent time</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2633,8 +2667,7 @@ between nine and five</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#UniversalObjectPreference</IRI>
-        <Literal>It encompasses individuals representing preferences, each having Universal_
-Object as its preference object</Literal>
+        <Literal>It encompasses individuals representing preferences, each having Universal_Object as its preference object</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2644,13 +2677,112 @@ Object as its preference object</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#UniversalTargetPreference</IRI>
-        <Literal>It encompasses individuals representing preferences, each having Universal_
-Target as its target context</Literal>
+        <Literal>It encompasses individuals representing preferences, each having Universal_Target as its target context</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>/core#UniversalTargetPreference</IRI>
         <Literal>Universal Target Preference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#hasAuthor</IRI>
+        <Literal>It relates an application with its author</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#hasAuthor</IRI>
+        <Literal>hasAuthor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#hasPart</IRI>
+        <Literal>It is the inverse of partOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#hasPart</IRI>
+        <Literal>hasPart</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#hasPartDirectly</IRI>
+        <Literal>A non-transitive sub-property of hasPart, denoting that an individual is a direct part of another individual</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#hasPartDirectly</IRI>
+        <Literal>hasPartDirectly</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#hasPreference</IRI>
+        <Literal>It relates a policy with its preferences and enables policies to inherit preferences from other policies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#hasPreference</IRI>
+        <Literal>hasPreference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#hasProtectionLevel</IRI>
+        <Literal>It relates a permission with its protection level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#hasProtectionLevel</IRI>
+        <Literal>hasProtectionLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#onDescriptiveContext</IRI>
+        <Literal>It defines a preference’s descriptive context</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#onDescriptiveContext</IRI>
+        <Literal>onDescriptiveContext</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#onPreferenceAction</IRI>
+        <Literal>It defines a preference’s preference action</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#onPreferenceAction</IRI>
+        <Literal>onPreferenceAction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#onPreferenceObject</IRI>
+        <Literal>It defines a preference’s preference object</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#onPreferenceObject</IRI>
+        <Literal>onPreferenceObject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#onTargetContext</IRI>
+        <Literal>It defines a preference’s target context</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#onTargetContext</IRI>
+        <Literal>onTargetContext</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/core#partOf</IRI>
+        <Literal>It defines a part-of relation between two individuals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/core#partOf</IRI>
+        <Literal>partOf</Literal>
     </AnnotationAssertion>
 
 </Ontology>
