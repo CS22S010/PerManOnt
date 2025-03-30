@@ -2406,6 +2406,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/isActive</IRI>
+        <Literal>It is a datatype property that indicates if a context indicator is active</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/isActive</IRI>
+        <Literal>isActive</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/isCorrelatedWith</IRI>
         <Literal>It relates two preferences that correlate with each other</Literal>
     </AnnotationAssertion>
@@ -2413,6 +2423,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>/isCorrelatedWith</IRI>
         <Literal>isCorrelatedWith</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/level</IRI>
+        <Literal>It is a dataype property that determines the order of descriptive context</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>/level</IRI>
+        <Literal>level</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
