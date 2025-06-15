@@ -12,13 +12,13 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="permanont" IRI="https://w3id.org/permanont/"/>
     <Prefix name="perm" IRI="https://w3id.org/permanont/perm#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
     <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
     <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
     <Prefix name="device" IRI="https://w3id.org/permanont/device#"/>
+    <Prefix name="permanont" IRI="https://w3id.org/permanont/"/>
     <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
         <Literal>PerManOnt: Permission Management Ontology for Smart Devices</Literal>
@@ -67,414 +67,401 @@
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
         <Literal>1.0.0</Literal>
     </Annotation>
-
     <Declaration>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
+        <Class IRI="/ContextIndicator"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="permanont:CurrentContext"/>
+        <Class IRI="/CurrentContext"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Application"/>
+        <Class IRI="/core#Application"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":ApplicationAuthor"/>
+        <Class IRI="/core#ApplicationAuthor"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":ApplicationCategory"/>
+        <Class IRI="/core#ApplicationCategory"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":ApplicationTargetPreference"/>
+        <Class IRI="/core#ApplicationTargetPreference"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":BackgroundPermission"/>
+        <Class IRI="/core#BackgroundPermission"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":ConditionalContext"/>
+        <Class IRI="/core#ConditionalContext"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":CustomCategory"/>
+        <Class IRI="/core#CustomCategory"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":DangerousPermission"/>
+        <Class IRI="/core#DangerousPermission"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <Class IRI="/core#DescriptiveContext"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":GroupTargetPreference"/>
+        <Class IRI="/core#GroupTargetPreference"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Location"/>
+        <Class IRI="/core#NormalPermission"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":NormalPermission"/>
+        <Class IRI="/core#Permission"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Permission"/>
+        <Class IRI="/core#PermissionGroup"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":PermissionGroup"/>
+        <Class IRI="/core#PermissionGroupPreference"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":PermissionGroupPreference"/>
+        <Class IRI="/core#PlayCategory"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":PlayCategory"/>
+        <Class IRI="/core#Policy"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Policy"/>
+        <Class IRI="/core#Preference"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#PreferenceAction"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":PreferenceAction"/>
+        <Class IRI="/core#PreferenceObject"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":PreferenceObject"/>
+        <Class IRI="/core#ProtectionLevel"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":ProtectionLevel"/>
+        <Class IRI="/core#ProtectionLevelPreference"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":ProtectionLevelPreference"/>
+        <Class IRI="/core#TargetContext"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":SocialEnvironment"/>
+        <Class IRI="/core#UniversalObjectPreference"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":TargetContext"/>
+        <Class IRI="/core#UniversalTargetPreference"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":Time"/>
+        <ObjectProperty IRI="/canNotOccurWith"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":UniversalObjectPreference"/>
+        <ObjectProperty IRI="/conflicts"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI=":UniversalTargetPreference"/>
+        <ObjectProperty IRI="/dependsOn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
+        <ObjectProperty IRI="/hasContextIndicator"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
+        <ObjectProperty IRI="/isCorrelatedWith"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="permanont:dependsOn"/>
+        <ObjectProperty IRI="/core#hasAuthor"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="permanont:hasContextIndicator"/>
+        <ObjectProperty IRI="/core#hasPart"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
+        <ObjectProperty IRI="/core#hasPartDirectly"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
+        <ObjectProperty IRI="/core#partOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+        <DataProperty IRI="/isActive"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+        <DataProperty IRI="/level"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
+        <NamedIndividual IRI="/Mary_2"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="permanont:isActive"/>
+        <NamedIndividual IRI="/Traveling"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="permanont:level"/>
+        <NamedIndividual IRI="/core#Act_Not_Share"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
+        <NamedIndividual IRI="/core#Act_Prompt_Permission"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="permanont:Traveling"/>
+        <NamedIndividual IRI="/core#Act_Share"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
+        <NamedIndividual IRI="/core#Android_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Group"/>
+        <NamedIndividual IRI="/core#Android_2"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Permission"/>
+        <NamedIndividual IRI="/core#Background_Permissions"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
+        <NamedIndividual IRI="/core#Dangerous_Permissions"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Android_1"/>
+        <NamedIndividual IRI="/core#Normal_Permissions"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Android_2"/>
+        <NamedIndividual IRI="/core#Pol_Android"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Background_Permissions"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Dangerous_Permissions"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Normal_Permissions"/>
+        <NamedIndividual IRI="/core#Prot_Signature"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Pol_Android"/>
+        <NamedIndividual IRI="/core#Universal_Description"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <NamedIndividual IRI="/core#Universal_Object"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+        <NamedIndividual IRI="/core#Universal_Target"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Prot_Signature"/>
+        <NamedIndividual IRI="/device#App_Authenticator"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+        <NamedIndividual IRI="/device#App_Hjelp113"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Universal_Object"/>
+        <NamedIndividual IRI="/device#App_NRKTV"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI=":Universal_Target"/>
+        <NamedIndividual IRI="/device#App_Zoom"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:App_Authenticator"/>
+        <NamedIndividual IRI="/device#Author_Microsoft_Cooperation"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:App_Hjelp113"/>
+        <NamedIndividual IRI="/device#Author_NRK"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:App_NRKTV"/>
+        <NamedIndividual IRI="/device#Author_Stiftelsen_Norsk_Luftambulanse"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:App_Zoom"/>
+        <NamedIndividual IRI="/device#Author_Zoom_us"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Author_Microsoft_Cooperation"/>
+        <NamedIndividual IRI="/device#CC_Mary_Approved_Apps"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Author_NRK"/>
+        <NamedIndividual IRI="/device#CC_Microsoft_Apps"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Author_Stiftelsen_Norsk_Luftambulanse"/>
+        <NamedIndividual IRI="/device#CC_Work_Apps"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Author_Zoom_us"/>
+        <NamedIndividual IRI="/device#Child_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:CC_Mary_Approved_Apps"/>
+        <NamedIndividual IRI="/device#DC_At_Work"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:CC_Microsoft_Apps"/>
+        <NamedIndividual IRI="/device#Henry_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:CC_Work_Apps"/>
+        <NamedIndividual IRI="/device#Henry_2"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Child_1"/>
+        <NamedIndividual IRI="/device#Henry_3"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:DC_At_Work"/>
+        <NamedIndividual IRI="/device#Mary_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Henry_1"/>
+        <NamedIndividual IRI="/device#PC_Business"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Henry_2"/>
+        <NamedIndividual IRI="/device#PC_Entertainment"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Henry_3"/>
+        <NamedIndividual IRI="/device#PC_Medical"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Mary_1"/>
+        <NamedIndividual IRI="/device#Pol_Cece"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:PC_Business"/>
+        <NamedIndividual IRI="/device#Pol_Child"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:PC_Entertainment"/>
+        <NamedIndividual IRI="/device#Pol_Henry"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:PC_Medical"/>
+        <NamedIndividual IRI="/device#Pol_Mary"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Pol_Cece"/>
+        <NamedIndividual IRI="/perm#Accept_Handover"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Pol_Child"/>
+        <NamedIndividual IRI="/perm#Access_Background_Location"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Pol_Henry"/>
+        <NamedIndividual IRI="/perm#Access_Coarse_Location"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="device:Pol_Mary"/>
+        <NamedIndividual IRI="/perm#Access_Fine_Location"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Accept_Handover"/>
+        <NamedIndividual IRI="/perm#Access_Media_Location"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Access_Background_Location"/>
+        <NamedIndividual IRI="/perm#Activity_Recognition"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Access_Coarse_Location"/>
+        <NamedIndividual IRI="/perm#Add_Voicemail"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Access_Fine_Location"/>
+        <NamedIndividual IRI="/perm#Answer_Phone_Calls"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Access_Media_Location"/>
+        <NamedIndividual IRI="/perm#Body_Sensors"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Activity_Recognition"/>
+        <NamedIndividual IRI="/perm#Call_Companion_App"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Add_Voicemail"/>
+        <NamedIndividual IRI="/perm#Call_Phone"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Answer_Phone_Calls"/>
+        <NamedIndividual IRI="/perm#Camera"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Body_Sensors"/>
+        <NamedIndividual IRI="/perm#Group_Activity_Recognition"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Call_Companion_App"/>
+        <NamedIndividual IRI="/perm#Group_Calendar"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Call_Phone"/>
+        <NamedIndividual IRI="/perm#Group_Call_Log"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Camera"/>
+        <NamedIndividual IRI="/perm#Group_Camera"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Activity_Recognition"/>
+        <NamedIndividual IRI="/perm#Group_Contacts"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Calendar"/>
+        <NamedIndividual IRI="/perm#Group_Location"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Call_Log"/>
+        <NamedIndividual IRI="/perm#Group_Microphone"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Camera"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Contacts"/>
+        <NamedIndividual IRI="/perm#Group_Sensors"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Location"/>
+        <NamedIndividual IRI="/perm#Group_Sms"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Microphone"/>
+        <NamedIndividual IRI="/perm#Group_Storage"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <NamedIndividual IRI="/perm#High_Sampling_Rate_Sensors"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sensors"/>
+        <NamedIndividual IRI="/perm#Manage_External_Storage"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sms"/>
+        <NamedIndividual IRI="/perm#Manage_Media"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Group_Storage"/>
+        <NamedIndividual IRI="/perm#Manage_Own_Calls"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:High_Sampling_Rate_Sensors"/>
+        <NamedIndividual IRI="/perm#Process_Outgoing_Calls"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Manage_External_Storage"/>
+        <NamedIndividual IRI="/perm#Read_Basic_Phone_State"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Manage_Media"/>
+        <NamedIndividual IRI="/perm#Read_Calendar"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Manage_Own_Calls"/>
+        <NamedIndividual IRI="/perm#Read_Call_Log"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Process_Outgoing_Calls"/>
+        <NamedIndividual IRI="/perm#Read_Contacts"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Read_Basic_Phone_State"/>
+        <NamedIndividual IRI="/perm#Read_External_Storage"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Read_Calendar"/>
+        <NamedIndividual IRI="/perm#Read_Phone_Numbers"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Read_Call_Log"/>
+        <NamedIndividual IRI="/perm#Read_Phone_State"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Read_Contacts"/>
+        <NamedIndividual IRI="/perm#Read_Sms"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Read_External_Storage"/>
+        <NamedIndividual IRI="/perm#Receive_Mms"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Read_Phone_Numbers"/>
+        <NamedIndividual IRI="/perm#Receive_Sms"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Read_Phone_State"/>
+        <NamedIndividual IRI="/perm#Receive_Wap_Push"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Read_Sms"/>
+        <NamedIndividual IRI="/perm#Record_Audio"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Mms"/>
+        <NamedIndividual IRI="/perm#Send_Sms"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Sms"/>
+        <NamedIndividual IRI="/perm#Use_Biometric"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Wap_Push"/>
+        <NamedIndividual IRI="/perm#Use_Fingerprint"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Record_Audio"/>
+        <NamedIndividual IRI="/perm#Use_Sip"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Send_Sms"/>
+        <NamedIndividual IRI="/perm#Write_Calendar"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Use_Biometric"/>
+        <NamedIndividual IRI="/perm#Write_Call_Log"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Use_Fingerprint"/>
+        <NamedIndividual IRI="/perm#Write_Contacts"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Use_Sip"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Write_Calendar"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Write_Call_Log"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Write_Contacts"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual abbreviatedIRI="perm:Write_External_Storage"/>
+        <NamedIndividual IRI="/perm#Write_External_Storage"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
@@ -512,1627 +499,1585 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
     </Declaration>
-
     <EquivalentClasses>
-        <Class abbreviatedIRI=":ApplicationTargetPreference"/>
+        <Class IRI="/core#ApplicationTargetPreference"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-            <Class abbreviatedIRI=":Application"/>
+            <ObjectProperty IRI="/core#onTargetContext"/>
+            <Class IRI="/core#Application"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class abbreviatedIRI=":ConditionalContext"/>
+        <Class IRI="/core#ConditionalContext"/>
         <ObjectUnionOf>
-            <Class abbreviatedIRI=":DescriptiveContext"/>
-            <Class abbreviatedIRI=":PreferenceObject"/>
-            <Class abbreviatedIRI=":TargetContext"/>
+            <Class IRI="/core#DescriptiveContext"/>
+            <Class IRI="/core#PreferenceObject"/>
+            <Class IRI="/core#TargetContext"/>
         </ObjectUnionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class abbreviatedIRI=":GroupTargetPreference"/>
+        <Class IRI="/core#GroupTargetPreference"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-            <Class abbreviatedIRI=":ApplicationCategory"/>
+            <ObjectProperty IRI="/core#onTargetContext"/>
+            <Class IRI="/core#ApplicationCategory"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class abbreviatedIRI=":Permission"/>
+        <Class IRI="/core#Permission"/>
         <ObjectUnionOf>
-            <Class abbreviatedIRI=":DangerousPermission"/>
-            <Class abbreviatedIRI=":NormalPermission"/>
+            <Class IRI="/core#DangerousPermission"/>
+            <Class IRI="/core#NormalPermission"/>
         </ObjectUnionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class abbreviatedIRI=":PermissionGroupPreference"/>
+        <Class IRI="/core#PermissionGroupPreference"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-            <Class abbreviatedIRI=":PermissionGroup"/>
+            <ObjectProperty IRI="/core#onPreferenceObject"/>
+            <Class IRI="/core#PermissionGroup"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class abbreviatedIRI=":PreferenceAction"/>
+        <Class IRI="/core#PreferenceAction"/>
         <ObjectOneOf>
-            <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
-            <NamedIndividual abbreviatedIRI=":Act_Prompt_Group"/>
-            <NamedIndividual abbreviatedIRI=":Act_Prompt_Permission"/>
-            <NamedIndividual abbreviatedIRI=":Act_Share"/>
+            <NamedIndividual IRI="/core#Act_Not_Share"/>
+            <NamedIndividual IRI="/core#Act_Prompt_Permission"/>
+            <NamedIndividual IRI="/core#Act_Share"/>
         </ObjectOneOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class abbreviatedIRI=":ProtectionLevelPreference"/>
+        <Class IRI="/core#ProtectionLevelPreference"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+            <ObjectProperty IRI="/core#onPreferenceObject"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Dangerous_Permissions"/>
-                <NamedIndividual abbreviatedIRI=":Normal_Permissions"/>
+                <NamedIndividual IRI="/core#Dangerous_Permissions"/>
+                <NamedIndividual IRI="/core#Normal_Permissions"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class abbreviatedIRI=":UniversalObjectPreference"/>
+        <Class IRI="/core#UniversalObjectPreference"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+            <ObjectProperty IRI="/core#onPreferenceObject"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Universal_Object"/>
+                <NamedIndividual IRI="/core#Universal_Object"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class abbreviatedIRI=":UniversalTargetPreference"/>
+        <Class IRI="/core#UniversalTargetPreference"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+            <ObjectProperty IRI="/core#onTargetContext"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Universal_Target"/>
+                <NamedIndividual IRI="/core#Universal_Target"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <SubClassOf>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <Class IRI="/ContextIndicator"/>
+        <Class IRI="/core#DescriptiveContext"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
+        <Class IRI="/ContextIndicator"/>
         <ObjectHasSelf>
-            <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
+            <ObjectProperty IRI="/core#hasPartDirectly"/>
         </ObjectHasSelf>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="permanont:CurrentContext"/>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
+        <Class IRI="/CurrentContext"/>
+        <Class IRI="/ContextIndicator"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="permanont:CurrentContext"/>
+        <Class IRI="/CurrentContext"/>
         <DataHasValue>
-            <DataProperty abbreviatedIRI="permanont:isActive"/>
+            <DataProperty IRI="/isActive"/>
             <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
         </DataHasValue>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Application"/>
-        <Class abbreviatedIRI=":TargetContext"/>
+        <Class IRI="/core#Application"/>
+        <Class IRI="/core#TargetContext"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Application"/>
+        <Class IRI="/core#Application"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":partOf"/>
+            <ObjectProperty IRI="/core#partOf"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Universal_Target"/>
+                <NamedIndividual IRI="/core#Universal_Target"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Application"/>
+        <Class IRI="/core#Application"/>
         <ObjectHasSelf>
-            <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
+            <ObjectProperty IRI="/core#hasPartDirectly"/>
         </ObjectHasSelf>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":ApplicationAuthor"/>
+        <Class IRI="/core#ApplicationAuthor"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":ApplicationCategory"/>
-        <Class abbreviatedIRI=":TargetContext"/>
+        <Class IRI="/core#ApplicationCategory"/>
+        <Class IRI="/core#TargetContext"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":ApplicationTargetPreference"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#ApplicationTargetPreference"/>
+        <Class IRI="/core#Preference"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":BackgroundPermission"/>
-        <Class abbreviatedIRI=":Permission"/>
+        <Class IRI="/core#BackgroundPermission"/>
+        <Class IRI="/core#Permission"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":ConditionalContext"/>
+        <Class IRI="/core#ConditionalContext"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":CustomCategory"/>
-        <Class abbreviatedIRI=":ApplicationCategory"/>
+        <Class IRI="/core#CustomCategory"/>
+        <Class IRI="/core#ApplicationCategory"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":DangerousPermission"/>
-        <Class abbreviatedIRI=":Permission"/>
+        <Class IRI="/core#DangerousPermission"/>
+        <Class IRI="/core#Permission"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":DangerousPermission"/>
+        <Class IRI="/core#DangerousPermission"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
+            <ObjectProperty IRI="/core#hasProtectionLevel"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+                <NamedIndividual IRI="/core#Prot_Dangerous"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":DangerousPermission"/>
+        <Class IRI="/core#DangerousPermission"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":partOf"/>
+            <ObjectProperty IRI="/core#partOf"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Dangerous_Permissions"/>
+                <NamedIndividual IRI="/core#Dangerous_Permissions"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <Class IRI="/core#DescriptiveContext"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":partOf"/>
+            <ObjectProperty IRI="/core#partOf"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+                <NamedIndividual IRI="/core#Universal_Description"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <Class IRI="/core#DescriptiveContext"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI=":hasPart"/>
+            <ObjectProperty IRI="/core#hasPart"/>
             <ObjectUnionOf>
-                <Class abbreviatedIRI="permanont:ContextIndicator"/>
-                <Class abbreviatedIRI=":DescriptiveContext"/>
+                <Class IRI="/ContextIndicator"/>
+                <Class IRI="/core#DescriptiveContext"/>
             </ObjectUnionOf>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <Class IRI="/core#DescriptiveContext"/>
         <ObjectHasSelf>
-            <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
+            <ObjectProperty IRI="/core#hasPartDirectly"/>
         </ObjectHasSelf>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":GroupTargetPreference"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#GroupTargetPreference"/>
+        <Class IRI="/core#Preference"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Location"/>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <Class IRI="/core#NormalPermission"/>
+        <Class IRI="/core#Permission"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":NormalPermission"/>
-        <Class abbreviatedIRI=":Permission"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":NormalPermission"/>
+        <Class IRI="/core#NormalPermission"/>
         <ObjectUnionOf>
             <ObjectSomeValuesFrom>
-                <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
+                <ObjectProperty IRI="/core#hasProtectionLevel"/>
                 <ObjectOneOf>
-                    <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+                    <NamedIndividual IRI="/core#Prot_Normal"/>
                 </ObjectOneOf>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
+                <ObjectProperty IRI="/core#hasProtectionLevel"/>
                 <ObjectOneOf>
-                    <NamedIndividual abbreviatedIRI=":Prot_Signature"/>
+                    <NamedIndividual IRI="/core#Prot_Signature"/>
                 </ObjectOneOf>
             </ObjectSomeValuesFrom>
         </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":NormalPermission"/>
+        <Class IRI="/core#NormalPermission"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":partOf"/>
+            <ObjectProperty IRI="/core#partOf"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Normal_Permissions"/>
+                <NamedIndividual IRI="/core#Normal_Permissions"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Permission"/>
-        <Class abbreviatedIRI=":PreferenceObject"/>
+        <Class IRI="/core#Permission"/>
+        <Class IRI="/core#PreferenceObject"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Permission"/>
+        <Class IRI="/core#Permission"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":partOf"/>
+            <ObjectProperty IRI="/core#partOf"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Universal_Object"/>
+                <NamedIndividual IRI="/core#Universal_Object"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Permission"/>
+        <Class IRI="/core#Permission"/>
         <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
+            <ObjectProperty IRI="/core#hasProtectionLevel"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
-                <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
-                <NamedIndividual abbreviatedIRI=":Prot_Signature"/>
+                <NamedIndividual IRI="/core#Prot_Dangerous"/>
+                <NamedIndividual IRI="/core#Prot_Normal"/>
+                <NamedIndividual IRI="/core#Prot_Signature"/>
             </ObjectOneOf>
         </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Permission"/>
+        <Class IRI="/core#Permission"/>
         <ObjectHasSelf>
-            <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
+            <ObjectProperty IRI="/core#hasPartDirectly"/>
         </ObjectHasSelf>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <Class abbreviatedIRI=":PreferenceObject"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <Class IRI="/core#PreferenceObject"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":PermissionGroupPreference"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#PermissionGroupPreference"/>
+        <Class IRI="/core#Preference"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":PlayCategory"/>
-        <Class abbreviatedIRI=":ApplicationCategory"/>
+        <Class IRI="/core#PlayCategory"/>
+        <Class IRI="/core#ApplicationCategory"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Policy"/>
+        <Class IRI="/core#Policy"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Policy"/>
+        <Class IRI="/core#Policy"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI=":hasPart"/>
+            <ObjectProperty IRI="/core#hasPart"/>
             <ObjectOneOf>
-                <NamedIndividual abbreviatedIRI=":Pol_Android"/>
+                <NamedIndividual IRI="/core#Pol_Android"/>
             </ObjectOneOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#Preference"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#Preference"/>
         <ObjectMinCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-            <Class abbreviatedIRI=":DescriptiveContext"/>
+            <ObjectProperty IRI="/core#onDescriptiveContext"/>
+            <Class IRI="/core#DescriptiveContext"/>
         </ObjectMinCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#Preference"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-            <Class abbreviatedIRI=":PreferenceAction"/>
+            <ObjectProperty IRI="/core#onPreferenceAction"/>
+            <Class IRI="/core#PreferenceAction"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#Preference"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-            <Class abbreviatedIRI=":PreferenceObject"/>
+            <ObjectProperty IRI="/core#onPreferenceObject"/>
+            <Class IRI="/core#PreferenceObject"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#Preference"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-            <Class abbreviatedIRI=":TargetContext"/>
+            <ObjectProperty IRI="/core#onTargetContext"/>
+            <Class IRI="/core#TargetContext"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":PreferenceAction"/>
+        <Class IRI="/core#PreferenceAction"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":PreferenceObject"/>
+        <Class IRI="/core#PreferenceObject"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI=":hasPart"/>
+            <ObjectProperty IRI="/core#hasPart"/>
             <ObjectUnionOf>
-                <Class abbreviatedIRI=":Permission"/>
-                <Class abbreviatedIRI=":PermissionGroup"/>
+                <Class IRI="/core#Permission"/>
+                <Class IRI="/core#PermissionGroup"/>
             </ObjectUnionOf>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":ProtectionLevel"/>
+        <Class IRI="/core#ProtectionLevel"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":ProtectionLevelPreference"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#ProtectionLevelPreference"/>
+        <Class IRI="/core#Preference"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":SocialEnvironment"/>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":TargetContext"/>
+        <Class IRI="/core#TargetContext"/>
         <ObjectAllValuesFrom>
-            <ObjectProperty abbreviatedIRI=":hasPart"/>
+            <ObjectProperty IRI="/core#hasPart"/>
             <ObjectUnionOf>
-                <Class abbreviatedIRI=":Application"/>
-                <Class abbreviatedIRI=":ApplicationCategory"/>
+                <Class IRI="/core#Application"/>
+                <Class IRI="/core#ApplicationCategory"/>
             </ObjectUnionOf>
         </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":Time"/>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <Class IRI="/core#UniversalObjectPreference"/>
+        <Class IRI="/core#Preference"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI=":UniversalObjectPreference"/>
-        <Class abbreviatedIRI=":Preference"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI=":UniversalTargetPreference"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <Class IRI="/core#UniversalTargetPreference"/>
+        <Class IRI="/core#Preference"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class abbreviatedIRI=":Application"/>
-        <Class abbreviatedIRI=":ApplicationCategory"/>
+        <Class IRI="/core#Application"/>
+        <Class IRI="/core#ApplicationCategory"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
-        <Class abbreviatedIRI=":PreferenceObject"/>
+        <Class IRI="/core#DescriptiveContext"/>
+        <Class IRI="/core#PreferenceObject"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class abbreviatedIRI=":Location"/>
-        <Class abbreviatedIRI=":SocialEnvironment"/>
+        <Class IRI="/core#Permission"/>
+        <Class IRI="/core#PermissionGroup"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class abbreviatedIRI=":Permission"/>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI=":TargetContext"/>
+        <Class IRI="/core#TargetContext"/>
         <ObjectUnionOf>
-            <Class abbreviatedIRI=":DescriptiveContext"/>
-            <Class abbreviatedIRI=":PreferenceObject"/>
-        </ObjectUnionOf>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI=":Time"/>
-        <ObjectUnionOf>
-            <Class abbreviatedIRI=":Location"/>
-            <Class abbreviatedIRI=":SocialEnvironment"/>
+            <Class IRI="/core#DescriptiveContext"/>
+            <Class IRI="/core#PreferenceObject"/>
         </ObjectUnionOf>
     </DisjointClasses>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
+        <Class IRI="/core#Preference"/>
+        <NamedIndividual IRI="/Mary_2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
-        <NamedIndividual abbreviatedIRI="permanont:Traveling"/>
+        <Class IRI="/ContextIndicator"/>
+        <NamedIndividual IRI="/Traveling"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI=":Android_1"/>
+        <Class IRI="/core#Preference"/>
+        <NamedIndividual IRI="/core#Android_1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI=":Android_2"/>
+        <Class IRI="/core#Preference"/>
+        <NamedIndividual IRI="/core#Android_2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PreferenceObject"/>
-        <NamedIndividual abbreviatedIRI=":Background_Permissions"/>
+        <Class IRI="/core#PreferenceObject"/>
+        <NamedIndividual IRI="/core#Background_Permissions"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PreferenceObject"/>
-        <NamedIndividual abbreviatedIRI=":Dangerous_Permissions"/>
+        <Class IRI="/core#PreferenceObject"/>
+        <NamedIndividual IRI="/core#Dangerous_Permissions"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PreferenceObject"/>
-        <NamedIndividual abbreviatedIRI=":Normal_Permissions"/>
+        <Class IRI="/core#PreferenceObject"/>
+        <NamedIndividual IRI="/core#Normal_Permissions"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Policy"/>
-        <NamedIndividual abbreviatedIRI=":Pol_Android"/>
+        <Class IRI="/core#Policy"/>
+        <NamedIndividual IRI="/core#Pol_Android"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":ProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <Class IRI="/core#ProtectionLevel"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":ProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+        <Class IRI="/core#ProtectionLevel"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":ProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Signature"/>
+        <Class IRI="/core#ProtectionLevel"/>
+        <NamedIndividual IRI="/core#Prot_Signature"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+        <Class IRI="/core#DescriptiveContext"/>
+        <NamedIndividual IRI="/core#Universal_Description"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PreferenceObject"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Object"/>
+        <Class IRI="/core#PreferenceObject"/>
+        <NamedIndividual IRI="/core#Universal_Object"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":TargetContext"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Target"/>
+        <Class IRI="/core#TargetContext"/>
+        <NamedIndividual IRI="/core#Universal_Target"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Application"/>
-        <NamedIndividual abbreviatedIRI="device:App_Authenticator"/>
+        <Class IRI="/core#Application"/>
+        <NamedIndividual IRI="/device#App_Authenticator"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Application"/>
-        <NamedIndividual abbreviatedIRI="device:App_Hjelp113"/>
+        <Class IRI="/core#Application"/>
+        <NamedIndividual IRI="/device#App_Hjelp113"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Application"/>
-        <NamedIndividual abbreviatedIRI="device:App_NRKTV"/>
+        <Class IRI="/core#Application"/>
+        <NamedIndividual IRI="/device#App_NRKTV"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Application"/>
-        <NamedIndividual abbreviatedIRI="device:App_Zoom"/>
+        <Class IRI="/core#Application"/>
+        <NamedIndividual IRI="/device#App_Zoom"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":ApplicationAuthor"/>
-        <NamedIndividual abbreviatedIRI="device:Author_Microsoft_Cooperation"/>
+        <Class IRI="/core#ApplicationAuthor"/>
+        <NamedIndividual IRI="/device#Author_Microsoft_Cooperation"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":ApplicationAuthor"/>
-        <NamedIndividual abbreviatedIRI="device:Author_NRK"/>
+        <Class IRI="/core#ApplicationAuthor"/>
+        <NamedIndividual IRI="/device#Author_NRK"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":ApplicationAuthor"/>
-        <NamedIndividual abbreviatedIRI="device:Author_Stiftelsen_Norsk_Luftambulanse"/>
+        <Class IRI="/core#ApplicationAuthor"/>
+        <NamedIndividual IRI="/device#Author_Stiftelsen_Norsk_Luftambulanse"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":ApplicationAuthor"/>
-        <NamedIndividual abbreviatedIRI="device:Author_Zoom_us"/>
+        <Class IRI="/core#ApplicationAuthor"/>
+        <NamedIndividual IRI="/device#Author_Zoom_us"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":CustomCategory"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Mary_Approved_Apps"/>
+        <Class IRI="/core#CustomCategory"/>
+        <NamedIndividual IRI="/device#CC_Mary_Approved_Apps"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":CustomCategory"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Microsoft_Apps"/>
+        <Class IRI="/core#CustomCategory"/>
+        <NamedIndividual IRI="/device#CC_Microsoft_Apps"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":CustomCategory"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Work_Apps"/>
+        <Class IRI="/core#CustomCategory"/>
+        <NamedIndividual IRI="/device#CC_Work_Apps"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI="device:Child_1"/>
+        <Class IRI="/core#Preference"/>
+        <NamedIndividual IRI="/device#Child_1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI="device:DC_At_Work"/>
+        <Class IRI="/core#DescriptiveContext"/>
+        <NamedIndividual IRI="/device#DC_At_Work"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_1"/>
+        <Class IRI="/core#Preference"/>
+        <NamedIndividual IRI="/device#Henry_1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_2"/>
+        <Class IRI="/core#Preference"/>
+        <NamedIndividual IRI="/device#Henry_2"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_3"/>
+        <Class IRI="/core#Preference"/>
+        <NamedIndividual IRI="/device#Henry_3"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Preference"/>
-        <NamedIndividual abbreviatedIRI="device:Mary_1"/>
+        <Class IRI="/core#Preference"/>
+        <NamedIndividual IRI="/device#Mary_1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PlayCategory"/>
-        <NamedIndividual abbreviatedIRI="device:PC_Business"/>
+        <Class IRI="/core#PlayCategory"/>
+        <NamedIndividual IRI="/device#PC_Business"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PlayCategory"/>
-        <NamedIndividual abbreviatedIRI="device:PC_Entertainment"/>
+        <Class IRI="/core#PlayCategory"/>
+        <NamedIndividual IRI="/device#PC_Entertainment"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PlayCategory"/>
-        <NamedIndividual abbreviatedIRI="device:PC_Medical"/>
+        <Class IRI="/core#PlayCategory"/>
+        <NamedIndividual IRI="/device#PC_Medical"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Policy"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Cece"/>
+        <Class IRI="/core#Policy"/>
+        <NamedIndividual IRI="/device#Pol_Cece"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Policy"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Child"/>
+        <Class IRI="/core#Policy"/>
+        <NamedIndividual IRI="/device#Pol_Child"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Policy"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Henry"/>
+        <Class IRI="/core#Policy"/>
+        <NamedIndividual IRI="/device#Pol_Henry"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Policy"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Mary"/>
+        <Class IRI="/core#Policy"/>
+        <NamedIndividual IRI="/device#Pol_Mary"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Accept_Handover"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Accept_Handover"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Background_Location"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Access_Background_Location"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Coarse_Location"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Access_Coarse_Location"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Fine_Location"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Access_Fine_Location"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Media_Location"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Access_Media_Location"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Activity_Recognition"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Activity_Recognition"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Add_Voicemail"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Add_Voicemail"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Answer_Phone_Calls"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Answer_Phone_Calls"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Body_Sensors"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Body_Sensors"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Call_Companion_App"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Call_Companion_App"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Call_Phone"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Call_Phone"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Camera"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Camera"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Activity_Recognition"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Activity_Recognition"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Calendar"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Calendar"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Call_Log"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Call_Log"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Camera"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Camera"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Contacts"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Contacts"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Location"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Location"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Microphone"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Microphone"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sensors"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Sensors"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sms"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Sms"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":PermissionGroup"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Storage"/>
+        <Class IRI="/core#PermissionGroup"/>
+        <NamedIndividual IRI="/perm#Group_Storage"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:High_Sampling_Rate_Sensors"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#High_Sampling_Rate_Sensors"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_External_Storage"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Manage_External_Storage"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_Media"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Manage_Media"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_Own_Calls"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Manage_Own_Calls"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Process_Outgoing_Calls"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Process_Outgoing_Calls"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Basic_Phone_State"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Read_Basic_Phone_State"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Calendar"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Read_Calendar"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Call_Log"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Read_Call_Log"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Contacts"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Read_Contacts"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_External_Storage"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Read_External_Storage"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Phone_Numbers"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Read_Phone_Numbers"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Phone_State"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Read_Phone_State"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Sms"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Read_Sms"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Mms"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Receive_Mms"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Sms"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Receive_Sms"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Wap_Push"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Receive_Wap_Push"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Record_Audio"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Record_Audio"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Send_Sms"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Send_Sms"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Biometric"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Use_Biometric"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Fingerprint"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Use_Fingerprint"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Sip"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Use_Sip"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Calendar"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Write_Calendar"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Call_Log"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Write_Call_Log"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Contacts"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Write_Contacts"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class abbreviatedIRI=":Permission"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_External_Storage"/>
+        <Class IRI="/core#Permission"/>
+        <NamedIndividual IRI="/perm#Write_External_Storage"/>
     </ClassAssertion>
     <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Group"/>
+        <NamedIndividual IRI="/core#Act_Not_Share"/>
+        <NamedIndividual IRI="/core#Act_Prompt_Permission"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Permission"/>
+        <NamedIndividual IRI="/core#Act_Not_Share"/>
+        <NamedIndividual IRI="/core#Act_Share"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
+        <NamedIndividual IRI="/core#Act_Prompt_Permission"/>
+        <NamedIndividual IRI="/core#Act_Share"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Group"/>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Permission"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Group"/>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
+        <NamedIndividual IRI="/core#Prot_Signature"/>
     </DifferentIndividuals>
     <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Permission"/>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
-    </DifferentIndividuals>
-    <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
-    </DifferentIndividuals>
-    <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Signature"/>
-    </DifferentIndividuals>
-    <DifferentIndividuals>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Signature"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
+        <NamedIndividual IRI="/core#Prot_Signature"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
-        <NamedIndividual abbreviatedIRI="device:DC_At_Work"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <NamedIndividual IRI="/Mary_2"/>
+        <NamedIndividual IRI="/device#DC_At_Work"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
-        <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
+        <NamedIndividual IRI="/Mary_2"/>
+        <NamedIndividual IRI="/core#Act_Not_Share"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Object"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <NamedIndividual IRI="/Mary_2"/>
+        <NamedIndividual IRI="/core#Universal_Object"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI="permanont:Mary_2"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Work_Apps"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <NamedIndividual IRI="/Mary_2"/>
+        <NamedIndividual IRI="/device#CC_Work_Apps"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI=":Android_1"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <NamedIndividual IRI="/core#Android_1"/>
+        <NamedIndividual IRI="/core#Universal_Description"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI=":Android_1"/>
-        <NamedIndividual abbreviatedIRI=":Act_Prompt_Group"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <NamedIndividual IRI="/core#Android_1"/>
+        <NamedIndividual IRI="/core#Dangerous_Permissions"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI=":Android_1"/>
-        <NamedIndividual abbreviatedIRI=":Dangerous_Permissions"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <NamedIndividual IRI="/core#Android_1"/>
+        <NamedIndividual IRI="/core#Universal_Target"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI=":Android_1"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Target"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <NamedIndividual IRI="/core#Android_2"/>
+        <NamedIndividual IRI="/core#Universal_Description"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI=":Android_2"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
+        <NamedIndividual IRI="/core#Android_2"/>
+        <NamedIndividual IRI="/core#Act_Share"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI=":Android_2"/>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <NamedIndividual IRI="/core#Android_2"/>
+        <NamedIndividual IRI="/core#Normal_Permissions"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI=":Android_2"/>
-        <NamedIndividual abbreviatedIRI=":Normal_Permissions"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <NamedIndividual IRI="/core#Android_2"/>
+        <NamedIndividual IRI="/core#Universal_Target"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI=":Android_2"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Target"/>
+        <ObjectProperty IRI="/core#hasPart"/>
+        <NamedIndividual IRI="/core#Background_Permissions"/>
+        <NamedIndividual IRI="/perm#Access_Background_Location"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
-        <NamedIndividual abbreviatedIRI=":Background_Permissions"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Background_Location"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <NamedIndividual IRI="/core#Pol_Android"/>
+        <NamedIndividual IRI="/core#Android_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <NamedIndividual abbreviatedIRI=":Pol_Android"/>
-        <NamedIndividual abbreviatedIRI=":Android_1"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <NamedIndividual IRI="/core#Pol_Android"/>
+        <NamedIndividual IRI="/core#Android_2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <NamedIndividual abbreviatedIRI=":Pol_Android"/>
-        <NamedIndividual abbreviatedIRI=":Android_2"/>
+        <ObjectProperty IRI="/core#hasAuthor"/>
+        <NamedIndividual IRI="/device#App_Authenticator"/>
+        <NamedIndividual IRI="/device#Author_Microsoft_Cooperation"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <NamedIndividual abbreviatedIRI="device:App_Authenticator"/>
-        <NamedIndividual abbreviatedIRI="device:Author_Microsoft_Cooperation"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/device#App_Authenticator"/>
+        <NamedIndividual IRI="/device#CC_Work_Apps"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="device:App_Authenticator"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Work_Apps"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/device#App_Authenticator"/>
+        <NamedIndividual IRI="/device#PC_Business"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="device:App_Authenticator"/>
-        <NamedIndividual abbreviatedIRI="device:PC_Business"/>
+        <ObjectProperty IRI="/core#hasAuthor"/>
+        <NamedIndividual IRI="/device#App_Hjelp113"/>
+        <NamedIndividual IRI="/device#Author_Stiftelsen_Norsk_Luftambulanse"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <NamedIndividual abbreviatedIRI="device:App_Hjelp113"/>
-        <NamedIndividual abbreviatedIRI="device:Author_Stiftelsen_Norsk_Luftambulanse"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/device#App_Hjelp113"/>
+        <NamedIndividual IRI="/device#PC_Medical"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="device:App_Hjelp113"/>
-        <NamedIndividual abbreviatedIRI="device:PC_Medical"/>
+        <ObjectProperty IRI="/core#hasAuthor"/>
+        <NamedIndividual IRI="/device#App_NRKTV"/>
+        <NamedIndividual IRI="/device#Author_NRK"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <NamedIndividual abbreviatedIRI="device:App_NRKTV"/>
-        <NamedIndividual abbreviatedIRI="device:Author_NRK"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/device#App_NRKTV"/>
+        <NamedIndividual IRI="/device#PC_Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="device:App_NRKTV"/>
-        <NamedIndividual abbreviatedIRI="device:PC_Entertainment"/>
+        <ObjectProperty IRI="/core#hasAuthor"/>
+        <NamedIndividual IRI="/device#App_Zoom"/>
+        <NamedIndividual IRI="/device#Author_Zoom_us"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <NamedIndividual abbreviatedIRI="device:App_Zoom"/>
-        <NamedIndividual abbreviatedIRI="device:Author_Zoom_us"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/device#App_Zoom"/>
+        <NamedIndividual IRI="/device#CC_Work_Apps"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="device:App_Zoom"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Work_Apps"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/device#App_Zoom"/>
+        <NamedIndividual IRI="/device#PC_Business"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="device:App_Zoom"/>
-        <NamedIndividual abbreviatedIRI="device:PC_Business"/>
+        <ObjectProperty IRI="/core#hasPart"/>
+        <NamedIndividual IRI="/device#CC_Mary_Approved_Apps"/>
+        <NamedIndividual IRI="/device#App_NRKTV"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Mary_Approved_Apps"/>
-        <NamedIndividual abbreviatedIRI="device:App_NRKTV"/>
+        <ObjectProperty IRI="/core#hasPart"/>
+        <NamedIndividual IRI="/device#CC_Microsoft_Apps"/>
+        <NamedIndividual IRI="/device#App_Authenticator"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Microsoft_Apps"/>
-        <NamedIndividual abbreviatedIRI="device:App_Authenticator"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <NamedIndividual IRI="/device#Child_1"/>
+        <NamedIndividual IRI="/core#Universal_Description"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI="device:Child_1"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
+        <NamedIndividual IRI="/device#Child_1"/>
+        <NamedIndividual IRI="/core#Act_Share"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI="device:Child_1"/>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <NamedIndividual IRI="/device#Child_1"/>
+        <NamedIndividual IRI="/core#Universal_Object"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI="device:Child_1"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Object"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <NamedIndividual IRI="/device#Child_1"/>
+        <NamedIndividual IRI="/device#CC_Mary_Approved_Apps"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI="device:Child_1"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Mary_Approved_Apps"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <NamedIndividual IRI="/device#Henry_1"/>
+        <NamedIndividual IRI="/core#Universal_Description"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_1"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
+        <NamedIndividual IRI="/device#Henry_1"/>
+        <NamedIndividual IRI="/core#Act_Share"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_1"/>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <NamedIndividual IRI="/device#Henry_1"/>
+        <NamedIndividual IRI="/core#Universal_Object"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_1"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Object"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <NamedIndividual IRI="/device#Henry_1"/>
+        <NamedIndividual IRI="/device#CC_Microsoft_Apps"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_1"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Microsoft_Apps"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <NamedIndividual IRI="/device#Henry_2"/>
+        <NamedIndividual IRI="/core#Universal_Description"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_2"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
+        <NamedIndividual IRI="/device#Henry_2"/>
+        <NamedIndividual IRI="/core#Act_Not_Share"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_2"/>
-        <NamedIndividual abbreviatedIRI=":Act_Not_Share"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <NamedIndividual IRI="/device#Henry_2"/>
+        <NamedIndividual IRI="/perm#Access_Background_Location"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_2"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Background_Location"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <NamedIndividual IRI="/device#Henry_2"/>
+        <NamedIndividual IRI="/core#Universal_Target"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_2"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Target"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <NamedIndividual IRI="/device#Henry_3"/>
+        <NamedIndividual IRI="/core#Universal_Description"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_3"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Description"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
+        <NamedIndividual IRI="/device#Henry_3"/>
+        <NamedIndividual IRI="/core#Act_Share"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_3"/>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <NamedIndividual IRI="/device#Henry_3"/>
+        <NamedIndividual IRI="/perm#Access_Background_Location"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_3"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Background_Location"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <NamedIndividual IRI="/device#Henry_3"/>
+        <NamedIndividual IRI="/device#App_Hjelp113"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_3"/>
-        <NamedIndividual abbreviatedIRI="device:App_Hjelp113"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <NamedIndividual IRI="/device#Mary_1"/>
+        <NamedIndividual IRI="/device#DC_At_Work"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <NamedIndividual abbreviatedIRI="device:Mary_1"/>
-        <NamedIndividual abbreviatedIRI="device:DC_At_Work"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
+        <NamedIndividual IRI="/device#Mary_1"/>
+        <NamedIndividual IRI="/core#Act_Share"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <NamedIndividual abbreviatedIRI="device:Mary_1"/>
-        <NamedIndividual abbreviatedIRI=":Act_Share"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <NamedIndividual IRI="/device#Mary_1"/>
+        <NamedIndividual IRI="/core#Universal_Object"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <NamedIndividual abbreviatedIRI="device:Mary_1"/>
-        <NamedIndividual abbreviatedIRI=":Universal_Object"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <NamedIndividual IRI="/device#Mary_1"/>
+        <NamedIndividual IRI="/device#CC_Work_Apps"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <NamedIndividual abbreviatedIRI="device:Mary_1"/>
-        <NamedIndividual abbreviatedIRI="device:CC_Work_Apps"/>
+        <ObjectProperty IRI="/core#hasPart"/>
+        <NamedIndividual IRI="/device#Pol_Cece"/>
+        <NamedIndividual IRI="/device#Pol_Child"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Cece"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Child"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <NamedIndividual IRI="/device#Pol_Child"/>
+        <NamedIndividual IRI="/device#Child_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Child"/>
-        <NamedIndividual abbreviatedIRI="device:Child_1"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <NamedIndividual IRI="/device#Pol_Henry"/>
+        <NamedIndividual IRI="/device#Henry_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Henry"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_1"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <NamedIndividual IRI="/device#Pol_Henry"/>
+        <NamedIndividual IRI="/device#Henry_2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Henry"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_2"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <NamedIndividual IRI="/device#Pol_Henry"/>
+        <NamedIndividual IRI="/device#Henry_3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Henry"/>
-        <NamedIndividual abbreviatedIRI="device:Henry_3"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <NamedIndividual IRI="/device#Pol_Mary"/>
+        <NamedIndividual IRI="/device#Mary_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <NamedIndividual abbreviatedIRI="device:Pol_Mary"/>
-        <NamedIndividual abbreviatedIRI="device:Mary_1"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Accept_Handover"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Accept_Handover"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Accept_Handover"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Accept_Handover"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Access_Background_Location"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Background_Location"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Access_Background_Location"/>
+        <NamedIndividual IRI="/perm#Group_Location"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Background_Location"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Location"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Access_Coarse_Location"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Coarse_Location"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Access_Coarse_Location"/>
+        <NamedIndividual IRI="/perm#Group_Location"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Coarse_Location"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Location"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Access_Fine_Location"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Fine_Location"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Access_Fine_Location"/>
+        <NamedIndividual IRI="/perm#Group_Location"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Fine_Location"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Location"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Access_Media_Location"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Media_Location"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Access_Media_Location"/>
+        <NamedIndividual IRI="/perm#Group_Storage"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Access_Media_Location"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Storage"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Activity_Recognition"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Activity_Recognition"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Activity_Recognition"/>
+        <NamedIndividual IRI="/perm#Group_Activity_Recognition"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Activity_Recognition"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Activity_Recognition"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Add_Voicemail"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Add_Voicemail"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Add_Voicemail"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Add_Voicemail"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Answer_Phone_Calls"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Answer_Phone_Calls"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Answer_Phone_Calls"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Answer_Phone_Calls"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Body_Sensors"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Body_Sensors"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Body_Sensors"/>
+        <NamedIndividual IRI="/perm#Group_Sensors"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Body_Sensors"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sensors"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Call_Companion_App"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Call_Companion_App"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Call_Companion_App"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Call_Companion_App"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Call_Phone"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Call_Phone"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Call_Phone"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Call_Phone"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Camera"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Camera"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Camera"/>
+        <NamedIndividual IRI="/perm#Group_Camera"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Camera"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Camera"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#High_Sampling_Rate_Sensors"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:High_Sampling_Rate_Sensors"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#High_Sampling_Rate_Sensors"/>
+        <NamedIndividual IRI="/perm#Group_Sensors"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:High_Sampling_Rate_Sensors"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sensors"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Manage_External_Storage"/>
+        <NamedIndividual IRI="/core#Prot_Signature"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_External_Storage"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Signature"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Manage_External_Storage"/>
+        <NamedIndividual IRI="/perm#Group_Storage"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_External_Storage"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Storage"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Manage_Media"/>
+        <NamedIndividual IRI="/core#Prot_Signature"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_Media"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Signature"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Manage_Media"/>
+        <NamedIndividual IRI="/perm#Group_Storage"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_Media"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Storage"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Manage_Own_Calls"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_Own_Calls"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Manage_Own_Calls"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Manage_Own_Calls"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Process_Outgoing_Calls"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Process_Outgoing_Calls"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Process_Outgoing_Calls"/>
+        <NamedIndividual IRI="/perm#Group_Call_Log"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Process_Outgoing_Calls"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Call_Log"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Read_Basic_Phone_State"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Basic_Phone_State"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Read_Basic_Phone_State"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Basic_Phone_State"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Read_Calendar"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Calendar"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Read_Calendar"/>
+        <NamedIndividual IRI="/perm#Group_Calendar"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Calendar"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Calendar"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Read_Call_Log"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Call_Log"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Read_Call_Log"/>
+        <NamedIndividual IRI="/perm#Group_Call_Log"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Call_Log"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Call_Log"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Read_Contacts"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Contacts"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Read_Contacts"/>
+        <NamedIndividual IRI="/perm#Group_Contacts"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Contacts"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Contacts"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Read_External_Storage"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_External_Storage"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Read_External_Storage"/>
+        <NamedIndividual IRI="/perm#Group_Storage"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_External_Storage"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Storage"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Read_Phone_Numbers"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Phone_Numbers"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Read_Phone_Numbers"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Phone_Numbers"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Read_Phone_State"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Phone_State"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Read_Phone_State"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Phone_State"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Read_Sms"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Sms"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Read_Sms"/>
+        <NamedIndividual IRI="/perm#Group_Sms"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Read_Sms"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sms"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Receive_Mms"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Mms"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Receive_Mms"/>
+        <NamedIndividual IRI="/perm#Group_Sms"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Mms"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sms"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Receive_Sms"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Sms"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Receive_Sms"/>
+        <NamedIndividual IRI="/perm#Group_Sms"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Sms"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sms"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Receive_Wap_Push"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Wap_Push"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Receive_Wap_Push"/>
+        <NamedIndividual IRI="/perm#Group_Sms"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Receive_Wap_Push"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sms"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Record_Audio"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Record_Audio"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Record_Audio"/>
+        <NamedIndividual IRI="/perm#Group_Microphone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Record_Audio"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Microphone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Send_Sms"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Send_Sms"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Send_Sms"/>
+        <NamedIndividual IRI="/perm#Group_Sms"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Send_Sms"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sms"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Use_Biometric"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Biometric"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Use_Biometric"/>
+        <NamedIndividual IRI="/perm#Group_Sensors"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Biometric"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sensors"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Use_Fingerprint"/>
+        <NamedIndividual IRI="/core#Prot_Normal"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Fingerprint"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Normal"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Use_Fingerprint"/>
+        <NamedIndividual IRI="/perm#Group_Sensors"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Fingerprint"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Sensors"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Use_Sip"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Sip"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Use_Sip"/>
+        <NamedIndividual IRI="/perm#Group_Phone"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Use_Sip"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Phone"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Write_Calendar"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Calendar"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Write_Calendar"/>
+        <NamedIndividual IRI="/perm#Group_Calendar"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Calendar"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Calendar"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Write_Call_Log"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Call_Log"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Write_Call_Log"/>
+        <NamedIndividual IRI="/perm#Group_Call_Log"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Call_Log"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Call_Log"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Write_Contacts"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Contacts"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Write_Contacts"/>
+        <NamedIndividual IRI="/perm#Group_Contacts"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_Contacts"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Contacts"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <NamedIndividual IRI="/perm#Write_External_Storage"/>
+        <NamedIndividual IRI="/core#Prot_Dangerous"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_External_Storage"/>
-        <NamedIndividual abbreviatedIRI=":Prot_Dangerous"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
-        <NamedIndividual abbreviatedIRI="perm:Write_External_Storage"/>
-        <NamedIndividual abbreviatedIRI="perm:Group_Storage"/>
+        <ObjectProperty IRI="/core#partOf"/>
+        <NamedIndividual IRI="/perm#Write_External_Storage"/>
+        <NamedIndividual IRI="/perm#Group_Storage"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty abbreviatedIRI="permanont:isActive"/>
-        <NamedIndividual abbreviatedIRI="permanont:Traveling"/>
+        <DataProperty IRI="/isActive"/>
+        <NamedIndividual IRI="/Traveling"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
+        <ObjectProperty IRI="/canNotOccurWith"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI="permanont:hasContextIndicator"/>
+        <ObjectProperty IRI="/hasContextIndicator"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
+        <ObjectProperty IRI="/core#hasAuthor"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
+        <ObjectProperty IRI="/core#hasPart"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
+        <ObjectProperty IRI="/core#hasPartDirectly"/>
+        <ObjectProperty IRI="/core#hasPart"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
+        <ObjectProperty IRI="/core#partOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
+        <ObjectProperty IRI="/core#hasPart"/>
+        <ObjectProperty IRI="/core#partOf"/>
     </InverseObjectProperties>
     <SymmetricObjectProperty>
-        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
+        <ObjectProperty IRI="/canNotOccurWith"/>
     </SymmetricObjectProperty>
     <SymmetricObjectProperty>
-        <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
+        <ObjectProperty IRI="/conflicts"/>
     </SymmetricObjectProperty>
     <SymmetricObjectProperty>
-        <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
+        <ObjectProperty IRI="/isCorrelatedWith"/>
     </SymmetricObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
+        <ObjectProperty IRI="/core#hasPart"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
+        <ObjectProperty IRI="/core#partOf"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
+        <ObjectProperty IRI="/canNotOccurWith"/>
+        <Class IRI="/ContextIndicator"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <ObjectProperty IRI="/conflicts"/>
+        <Class IRI="/core#Preference"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="permanont:dependsOn"/>
-        <Class abbreviatedIRI=":Permission"/>
+        <ObjectProperty IRI="/dependsOn"/>
+        <Class IRI="/core#Permission"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="permanont:hasContextIndicator"/>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <ObjectProperty IRI="/hasContextIndicator"/>
+        <Class IRI="/core#DescriptiveContext"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <ObjectProperty IRI="/isCorrelatedWith"/>
+        <Class IRI="/core#Preference"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <Class abbreviatedIRI=":Application"/>
+        <ObjectProperty IRI="/core#hasAuthor"/>
+        <Class IRI="/core#Application"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
+        <ObjectProperty IRI="/core#hasPart"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
+        <ObjectProperty IRI="/core#hasPartDirectly"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <Class abbreviatedIRI=":Policy"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <Class IRI="/core#Policy"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <Class abbreviatedIRI=":Permission"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <Class IRI="/core#Permission"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
+        <ObjectProperty IRI="/core#partOf"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="permanont:canNotOccurWith"/>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
+        <ObjectProperty IRI="/canNotOccurWith"/>
+        <Class IRI="/ContextIndicator"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <ObjectProperty IRI="/conflicts"/>
+        <Class IRI="/core#Preference"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="permanont:dependsOn"/>
-        <Class abbreviatedIRI=":Permission"/>
+        <ObjectProperty IRI="/dependsOn"/>
+        <Class IRI="/core#Permission"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="permanont:hasContextIndicator"/>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
+        <ObjectProperty IRI="/hasContextIndicator"/>
+        <Class IRI="/ContextIndicator"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <ObjectProperty IRI="/isCorrelatedWith"/>
+        <Class IRI="/core#Preference"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasAuthor"/>
-        <Class abbreviatedIRI=":ApplicationAuthor"/>
+        <ObjectProperty IRI="/core#hasAuthor"/>
+        <Class IRI="/core#ApplicationAuthor"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasPart"/>
+        <ObjectProperty IRI="/core#hasPart"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasPartDirectly"/>
+        <ObjectProperty IRI="/core#hasPartDirectly"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
-        <Class abbreviatedIRI=":Preference"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
+        <Class IRI="/core#Preference"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":hasProtectionLevel"/>
-        <Class abbreviatedIRI=":ProtectionLevel"/>
+        <ObjectProperty IRI="/core#hasProtectionLevel"/>
+        <Class IRI="/core#ProtectionLevel"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <ObjectProperty IRI="/core#onDescriptiveContext"/>
+        <Class IRI="/core#DescriptiveContext"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
-        <Class abbreviatedIRI=":PreferenceAction"/>
+        <ObjectProperty IRI="/core#onPreferenceAction"/>
+        <Class IRI="/core#PreferenceAction"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
-        <Class abbreviatedIRI=":PreferenceObject"/>
+        <ObjectProperty IRI="/core#onPreferenceObject"/>
+        <Class IRI="/core#PreferenceObject"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":onTargetContext"/>
-        <Class abbreviatedIRI=":TargetContext"/>
+        <ObjectProperty IRI="/core#onTargetContext"/>
+        <Class IRI="/core#TargetContext"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI=":partOf"/>
+        <ObjectProperty IRI="/core#partOf"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
-            <ObjectProperty abbreviatedIRI=":hasPart"/>
-            <ObjectProperty abbreviatedIRI=":hasPreference"/>
+            <ObjectProperty IRI="/core#hasPart"/>
+            <ObjectProperty IRI="/core#hasPreference"/>
         </ObjectPropertyChain>
-        <ObjectProperty abbreviatedIRI=":hasPreference"/>
+        <ObjectProperty IRI="/core#hasPreference"/>
     </SubObjectPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI="permanont:isActive"/>
+        <DataProperty IRI="/isActive"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI="permanont:level"/>
+        <DataProperty IRI="/level"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <FunctionalDataProperty>
-        <DataProperty abbreviatedIRI="permanont:isActive"/>
+        <DataProperty IRI="/isActive"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="permanont:isActive"/>
-        <Class abbreviatedIRI="permanont:ContextIndicator"/>
+        <DataProperty IRI="/isActive"/>
+        <Class IRI="/ContextIndicator"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="permanont:level"/>
-        <Class abbreviatedIRI=":DescriptiveContext"/>
+        <DataProperty IRI="/level"/>
+        <Class IRI="/core#DescriptiveContext"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty abbreviatedIRI="permanont:isActive"/>
+        <DataProperty IRI="/isActive"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty abbreviatedIRI="permanont:level"/>
+        <DataProperty IRI="/level"/>
         <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
     </DataPropertyRange>
     <DLSafeRule>
         <Body>
             <ClassAtom>
-                <Class abbreviatedIRI=":Preference"/>
+                <Class IRI="/core#Preference"/>
                 <Variable IRI="urn:swrl:var#x1"/>
             </ClassAtom>
             <ClassAtom>
-                <Class abbreviatedIRI=":Preference"/>
+                <Class IRI="/core#Preference"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ClassAtom>
             <DifferentIndividualsAtom>
@@ -2140,77 +2085,77 @@
                 <Variable IRI="urn:swrl:var#x2"/>
             </DifferentIndividualsAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
+                <ObjectProperty IRI="/core#onDescriptiveContext"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
+                <ObjectProperty IRI="/core#onDescriptiveContext"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+                <ObjectProperty IRI="/core#onTargetContext"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y2"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+                <ObjectProperty IRI="/core#onPreferenceObject"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y3"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+                <ObjectProperty IRI="/core#onTargetContext"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y22"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+                <ObjectProperty IRI="/core#onPreferenceObject"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y33"/>
             </ObjectPropertyAtom>
             <ClassAtom>
-                <Class abbreviatedIRI=":Application"/>
+                <Class IRI="/core#Application"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y2"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y22"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ObjectPropertyAtom>
             <ClassAtom>
-                <Class abbreviatedIRI=":Permission"/>
+                <Class IRI="/core#Permission"/>
                 <Variable IRI="urn:swrl:var#z2"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y3"/>
                 <Variable IRI="urn:swrl:var#z2"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y33"/>
                 <Variable IRI="urn:swrl:var#z2"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
+                <ObjectProperty IRI="/core#onPreferenceAction"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y4"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
+                <ObjectProperty IRI="/core#onPreferenceAction"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y4"/>
             </ObjectPropertyAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="permanont:isCorrelatedWith"/>
+                <ObjectProperty IRI="/isCorrelatedWith"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ObjectPropertyAtom>
@@ -2231,78 +2176,78 @@
         </Annotation>
         <Body>
             <ClassAtom>
-                <Class abbreviatedIRI=":Preference"/>
+                <Class IRI="/core#Preference"/>
                 <Variable IRI="urn:swrl:var#x1"/>
             </ClassAtom>
             <ClassAtom>
-                <Class abbreviatedIRI=":Preference"/>
+                <Class IRI="/core#Preference"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
+                <ObjectProperty IRI="/core#onDescriptiveContext"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
+                <ObjectProperty IRI="/core#onDescriptiveContext"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+                <ObjectProperty IRI="/core#onTargetContext"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y2"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+                <ObjectProperty IRI="/core#onPreferenceObject"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y3"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+                <ObjectProperty IRI="/core#onTargetContext"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y22"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+                <ObjectProperty IRI="/core#onPreferenceObject"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y33"/>
             </ObjectPropertyAtom>
             <ClassAtom>
-                <Class abbreviatedIRI=":Application"/>
+                <Class IRI="/core#Application"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y2"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y22"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ObjectPropertyAtom>
             <ClassAtom>
-                <Class abbreviatedIRI=":Permission"/>
+                <Class IRI="/core#Permission"/>
                 <Variable IRI="urn:swrl:var#z2"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y3"/>
                 <Variable IRI="urn:swrl:var#z2"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y33"/>
                 <Variable IRI="urn:swrl:var#z2"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
+                <ObjectProperty IRI="/core#onPreferenceAction"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y4"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
+                <ObjectProperty IRI="/core#onPreferenceAction"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y5"/>
             </ObjectPropertyAtom>
@@ -2313,7 +2258,7 @@
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
+                <ObjectProperty IRI="/conflicts"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ObjectPropertyAtom>
@@ -2334,85 +2279,85 @@
         </Annotation>
         <Body>
             <ClassAtom>
-                <Class abbreviatedIRI=":Preference"/>
+                <Class IRI="/core#Preference"/>
                 <Variable IRI="urn:swrl:var#x1"/>
             </ClassAtom>
             <ClassAtom>
-                <Class abbreviatedIRI=":Preference"/>
+                <Class IRI="/core#Preference"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
+                <ObjectProperty IRI="/core#onDescriptiveContext"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onDescriptiveContext"/>
+                <ObjectProperty IRI="/core#onDescriptiveContext"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+                <ObjectProperty IRI="/core#onTargetContext"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y2"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+                <ObjectProperty IRI="/core#onPreferenceObject"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y3"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onTargetContext"/>
+                <ObjectProperty IRI="/core#onTargetContext"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y22"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceObject"/>
+                <ObjectProperty IRI="/core#onPreferenceObject"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y33"/>
             </ObjectPropertyAtom>
             <ClassAtom>
-                <Class abbreviatedIRI=":Application"/>
+                <Class IRI="/core#Application"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ClassAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y2"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y22"/>
                 <Variable IRI="urn:swrl:var#z1"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y3"/>
                 <Variable IRI="urn:swrl:var#z2"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":hasPart"/>
+                <ObjectProperty IRI="/core#hasPart"/>
                 <Variable IRI="urn:swrl:var#y33"/>
                 <Variable IRI="urn:swrl:var#z3"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="permanont:dependsOn"/>
+                <ObjectProperty IRI="/dependsOn"/>
                 <Variable IRI="urn:swrl:var#z2"/>
                 <Variable IRI="urn:swrl:var#z3"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
+                <ObjectProperty IRI="/core#onPreferenceAction"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#y4"/>
             </ObjectPropertyAtom>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI=":onPreferenceAction"/>
+                <ObjectProperty IRI="/core#onPreferenceAction"/>
                 <Variable IRI="urn:swrl:var#x2"/>
                 <Variable IRI="urn:swrl:var#y5"/>
             </ObjectPropertyAtom>
             <SameIndividualAtom>
                 <Variable IRI="urn:swrl:var#y4"/>
-                <NamedIndividual abbreviatedIRI=":Act_Share"/>
+                <NamedIndividual IRI="/core#Act_Share"/>
             </SameIndividualAtom>
             <DifferentIndividualsAtom>
                 <Variable IRI="urn:swrl:var#y4"/>
@@ -2421,7 +2366,7 @@
         </Body>
         <Head>
             <ObjectPropertyAtom>
-                <ObjectProperty abbreviatedIRI="permanont:conflicts"/>
+                <ObjectProperty IRI="/conflicts"/>
                 <Variable IRI="urn:swrl:var#x1"/>
                 <Variable IRI="urn:swrl:var#x2"/>
             </ObjectPropertyAtom>
@@ -2619,16 +2564,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/core#Location</IRI>
-        <Literal>It encompasses individuals representing real-world locations</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>/core#Location</IRI>
-        <Literal>Location</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#NormalPermission</IRI>
         <Literal>It encompasses individuals representing non-dangerous permissions, i.e., permissions with a normal or signature protection level</Literal>
     </AnnotationAssertion>
@@ -2739,16 +2674,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/core#SocialEnvironment</IRI>
-        <Literal>It encompasses individuals representing social environments, such as being with colleagues</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>/core#SocialEnvironment</IRI>
-        <Literal>Social Environment</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>/core#TargetContext</IRI>
         <Literal>It encompasses individuals representing applications or groups of applications and can be used to define which applications a preference is concerned with, partially defining when the preference is active</Literal>
     </AnnotationAssertion>
@@ -2756,16 +2681,6 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>/core#TargetContext</IRI>
         <Literal>Target Context</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>/core#Time</IRI>
-        <Literal>It encompasses individuals that represent time</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>/core#Time</IRI>
-        <Literal>Time</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2887,7 +2802,6 @@
         <IRI>/core#partOf</IRI>
         <Literal>partOf</Literal>
     </AnnotationAssertion>
-
 </Ontology>
 
 
