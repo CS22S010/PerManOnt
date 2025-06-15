@@ -1,0 +1,108 @@
+
+1) What action needs to be performed when an application asks for a permission when the user is in a particular context?
+
+Let's assume the request is coming from Zoom application asks for Camera permission when the current context is 'At Work'. The following SPARQL query will give the desired result
+
+SELECT ?act WHERE {
+?pref :type Preference .
+?pref :onTargetContext [:hasPart device:App_Zoom] ;
+:onDescriptiveContext [:hasPart device:DC_At_Work];
+:onPreferenceObject [:hasPart perm:Camera] ;
+:onPreferenceAction ?act ;
+}
+
+
+
+
+2) What preference is responsible for a particular action when the application requests a permission?
+
+Let's assume the Camera permission is allowed for the Zoom application when the current context is 'At Work'. The following SPARQL query will give the desired result
+
+SELECT ?pref WHERE {
+?pref :type Preference .
+?pref :onTargetContext [:hasPart device:App_Zoom] ;
+:onDescriptiveContext [:hasPart device:DC_At_Work];
+:onPreferenceObject [:hasPart perm:Camera] ;
+:onPreferenceAction :Act_Share ;
+}
+
+
+3) Which applications can access a particular resource and in which context?
+
+Suppose you need to find the applications which can access the camera permission.
+
+SELECT ?app, ?context WHERE {
+?pref :type Preference .
+?pref :onTargetContext [:hasPart ?app] ;
+:onDescriptiveContext [:hasPart ?context];
+:onPreferenceObject [:hasPart perm:Camera] ;
+:onPreferenceAction :Act_Share ;
+}
+
+
+4) Which permissions are accessible to an application and in which context?
+
+Suppose you need to find the permissions that the Zoom appllication has access to
+
+SELECT ?perm, ?context WHERE {
+?pref :type Preference .
+?pref :onTargetContext [:hasPart device:App_Zoom] ;
+:onDescriptiveContext [:hasPart ?context];
+:onPreferenceObject [:hasPart ?perm] ;
+:onPreferenceAction :Act_Share ;
+}
+
+
+5) When adding a new preference is added, what preferences conflicts/correlates with them?
+
+The SWRL rule conflict rule will add the conficts role in the ontology
+
+SELECT ?pref1, ?pref2 WHERE {
+?pref1 :type Preference .
+?pref2 :type Preference .
+?pref1 :conflicts ?pref2 ;
+}
+
+For correlated preferences, a similar query will be used which will check for 'isCorrelatedWith' role instead of 'conflicts'
+
+
+6) What are the overlapping components in conflicting/correlated preferences when adding a preference?
+
+Let's say Pref_1 and Pref_2 are the conflicting/correlating preferences
+
+SELECT ?context, ?app, ?perm, ?act1, ?act2 WHERE {
+?app :type Application .
+?perm :type Permission .
+:Pref_1 :onTargetContext [:hasPart ?app] ;
+:Pref_2 :onTargetContext [:hasPart ?app] ;
+?pref1 :onPreferenceObject [:hasPart ?perm] ;
+?pref2 :onPreferenceObject [:hasPart ?perm] ;
+:Pref_1 :onPreferenceAction ?act1 ;
+:Pref_2 :onPreferenceAction ?act2 ;
+
+}
+
+
+7) Which preference will be executed when multiple descriptive contexts are active?
+
+Let's assume Zoom application is requesting the Camera application.
+
+A priority queue of the active descriptive contexts will be maintained based on their 'level' property.
+
+Now, for each descriptive context 'Desc' which is extracted from the queue, the following query will be run
+
+
+SELECT ?act WHERE {
+?pref :type Preference .
+?pref :onTargetContext [:hasPart device:App_Zoom] ;
+:onDescriptiveContext [:hasPart :Desc];
+:onPreferenceObject [:hasPart perm:Camera] ;
+:onPreferenceAction ?act ;
+}
+
+If no such preference exist in this level, the query will return an empty result.
+In which case, the descriptive context in the next highest level will be extracted and the above process will be repeated.
+
+
+
+
